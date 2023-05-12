@@ -1,0 +1,33 @@
+.card{
+    margin: 0 auto;
+    width: 80%;
+    // border: 1px solid green;
+
+    .image{
+        background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQX48JYpPPow8zQXp34oKHyqRbECSs1dUpOdw") no-repeat center / cover ;
+        // border: 2px solid red;
+        height: 250px;
+        margin-bottom: 50px;
+    }
+    .projectSummary{
+        .text{
+            color: white;
+            margin-bottom: 30px;
+            text-align: center;
+            font-size: 1.6rem;
+        }
+        .githubLink{
+            display: flex;
+            align-items: center;
+        }
+        a{
+            font-size: 1.4rem;
+            color: white;
+        }
+        img{
+            width: 25px;
+            height: 25px;
+            margin-right: 7px;
+        }
+    }
+}
