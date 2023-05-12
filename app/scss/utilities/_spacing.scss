@@ -1,0 +1,69 @@
+$spaceAmounts: (0, 8, 10, 15, 20, 100, auto);
+$sides: (top, right, bottom, left);
+
+.mxCenter{
+  margin: 0 auto;
+}
+
+@mixin space-modifier ($propertie, $unit){
+  @each $side in $sides {
+    @each $space in $spaceAmounts{
+      &-#{$side}-#{$space} {
+        #{$propertie}-#{$side}: #{$space}#{$unit};
+      }
+    }
+  }
+}
+
+@each $space in $spaceAmounts { //loop trough all space amounts
+  @if $space==auto { //
+    .m-#{$space} {
+      margin: #{$space};
+    }
+
+    .mx-#{$space} {
+      margin-left: #{$space};
+      margin-right: #{$space};
+    }
+
+    .my-#{$space} {
+      margin-top: #{$space};
+      margin-bottom: #{$space};
+
+    }
+
+    .ml-#{$space} {
+      margin-left: #{$space};
+    }
+
+    .mr-#{$space} {
+      margin-right: #{$space};
+    }
+
+    .mb-#{$space} {
+      margin-bottom: #{$space};
+    }
+
+    .mt-#{$space} {
+      margin-top: #{$space};
+    }
+  }
+
+  @else {
+    .mPx{
+      @include space-modifier(margin, px);
+    }
+
+    .pPx{
+      @include space-modifier(padding, px);
+    }
+
+    .mVw{
+      @include space-modifier(margin, vw);
+    }
+
+    .pVw{
+      @include space-modifier(padding, vw);
+    }
+  }
+}

@@ -1,0 +1,36 @@
+$positionsProprieties: (absolute, relative, fixed);
+
+@each $proprietie in $positionsProprieties {
+    .p-#{$proprietie}{
+        position: #{$proprietie};
+    }
+}
+
+//********************************************top, right, botoom, left positions*******************************************
+@for $i from 0 through 1 { 
+    .top-#{$i} {
+      top: #{$i}px;
+    }
+    .right-#{$i} {
+      right: #{$i}px;
+    }
+    .bottom-#{$i} {
+      bottom: #{$i}px;
+    }
+    .left-#{$i} {
+      left: #{$i}px;
+    }
+  }
+
+//******************************************z-index**********************************************
+@for $i from 0 through 3 {
+    .z-#{$i}{
+        z-index: $i;
+        color: blue;
+    }
+}
+
+.z-below{
+    z-index: -1;
+}
+

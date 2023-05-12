@@ -1,0 +1,1 @@
+var button=document.querySelector(".responsiveMenuButton"),responsiveNav=document.querySelector(".responsiveNav");null!=button&&button.addEventListener("click",function(){responsiveNav.classList.toggle("open")});

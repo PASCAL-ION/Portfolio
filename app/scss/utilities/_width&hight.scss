@@ -1,0 +1,47 @@
+$dimentionsValues: (10, 50, 100);
+$unit-px: "px";
+$unit-perc: "%";
+
+@mixin dimentions($propertie, $unit){
+    @each $dimention in $dimentionsValues{
+        &-#{$dimention}{
+            #{$propertie}: #{$dimention + $unit};
+        }
+    }
+}
+
+.wPx{
+    @include dimentions(width, $unit-px)
+}
+.wPerc{
+    @include dimentions(width, $unit-perc)
+}
+
+.hPx{
+    @include dimentions(height, $unit-px)
+}
+.hPerc{
+    @include dimentions(height, $unit-perc)
+}
+
+
+@each $dimention in $dimentionsValues {
+    .wPerc-#{$dimention}{
+        width: #{$dimention + "%"};
+    }
+    .hPerc-#{$dimention}{
+        height: #{$dimention + "%"};
+    }
+    .wPx-#{$dimention}{
+        width: #{$dimention}px;
+    }
+    .hPx-#{$dimention}{
+        height: #{$dimention}px;
+    }
+    .vw-#{$dimention}{
+        width: #{$dimention}vw;
+    }
+    .vh-#{$dimention}{
+        height: #{$dimention}vh;
+    }
+}

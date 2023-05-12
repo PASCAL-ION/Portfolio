@@ -1,0 +1,24 @@
+@import "../utilities/media";
+
+
+:root{
+    font-size: 10px;
+
+    @include respond(tablet){
+        font-size: 12px;
+    }
+}
+
+*,::after,::before{
+    padding: 0;
+    margin: 0;
+    font-weight: normal;
+    text-decoration: none;
+    color: black;
+    list-style: none;
+}
+
+button{
+    border: none;
+    border-radius: 5px;
+}

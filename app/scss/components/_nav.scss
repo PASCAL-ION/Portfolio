@@ -1,0 +1,93 @@
+@import "../utilities/media";
+
+//classe pour gerer l'ouverture du menu sur mobile
+.open{
+    transform: translateX(0)!important;
+}
+
+.responsiveNav{
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffffffd3;
+    transform: translateX(-100%);
+    transition: transform .5s;
+
+    @include respond(tablet){
+        transform: translateX(0);
+        align-items: flex-start;
+        background: #00000000;
+    }
+
+    ul{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        height: 70%;
+
+        @include respond(tablet){
+            flex-direction: row;
+            width: 80vh;
+            height: 10%;
+        }
+        
+        li{
+            a{
+                @include respond(tablet){
+                    color: rgb(201, 201, 201);
+                }
+                font-size: clamp(14px, 3vh, 40px);
+                position: relative;
+                //center horizontally the after element 
+                display: flex;
+                justify-content: center;
+
+                &::after{
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    border-radius: 1px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    z-index: -1;
+                    width: 115%;
+                    height: 0;
+                    background: linear-gradient(to bottom,#0f9b0f, #000000 );/* linear-gradient(to right, #000000, #0f9b0f) */
+                    transition: height .5s;
+                }
+
+                &:hover{
+                    &::after{
+                        height: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+//Button menu hamburger
+
+.responsiveMenuButton{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    background: #00000000;
+    z-index: 1;
+
+    @include respond(tablet){
+        display: none;
+    }
+
+
+    i{
+        &::before{
+            color: azure;
+            font-size: 4rem;
+        }
+    }
+}
