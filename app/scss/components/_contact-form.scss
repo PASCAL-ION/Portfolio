@@ -1,0 +1,45 @@
+#contact-form{
+    transform: translateY(50%);
+    width: 80%;
+    // border: 2px solid red;
+
+    .input-group{
+        position: relative;
+        // border: 2px solid black;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 40px;
+        
+        label{
+            position: absolute;
+            top: 50%;
+            left: 10px;
+            transform: translateY(-50%);
+            color: gray;
+            font-size: 1.2rem;
+            transition: transform .2s;
+        }
+        input, textarea{
+            width: 100%;
+            border: none;
+            outline: none;
+            padding: 0 10px;
+        }
+        input{
+            height: 40px;
+        }
+        input:focus ~ label, /* Input has focus */
+        input:not(:placeholder-shown) ~ label  /* Input has a value */  {
+            transform: translateY(-45px) translateX(-5px);
+            color: rgb(56, 56, 56);
+            font-size: 1.4rem;
+        }
+        textarea:focus ~ label,
+        textarea:not(:placeholder-shown) ~ label  {
+            transform: translateY(-100px) translateX(-5px);
+            color: rgb(56, 56, 56);
+            font-size: 1.4rem;
+        }
+    }
+}
+

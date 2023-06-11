@@ -1,7 +1,7 @@
 $colors: (
     "white" : rgb(209, 209, 209),
-    "gray" : rgb(59, 59, 59),
-    "black" : black
+    "lightGray" : rgb(176, 176, 176),
+    "lightBlack" : rgb(24, 24, 24)
 ); // scss map 
 
 @mixin color-modifiers{

@@ -1,2 +1,111 @@
-//Faire une div qui prend toute la page et la transformer en carousel avc des petit points pour indiquer la position dans le carousel. 
-//Faire que toute la section soit un carousel ?
+::-webkit-scrollbar {
+    width: 0;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: transparent;
+  }
+
+.slideshow{
+    height: 100%;
+    width: 100%;
+    // border: 3px solid yellow;
+
+    .container{
+        // border: 3px solid green;
+        height: 100%;
+        width: 100%;
+        overflow-x: scroll;
+        scroll-snap-type: x mandatory;
+        display: flex;
+        align-items: center;
+        
+        
+        .slide{
+            // border: 3px solid blue;
+            height: 100%;
+            width: 100%;
+            //center card inside
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            //----------------------
+            // margin-right: 60px;
+        }
+    }
+
+}
+.dots{
+    position: absolute;
+    top: 95%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: space-between;
+    
+    .progress{
+        background: gray;
+        width: 100%;
+        height: 2px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .percent{
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgb(0, 17, 255);
+        width: 0;
+        height: 2px;
+        transition: width .5s;
+    }
+
+    .line{
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        height: 2px;
+        width: 100%;
+        background: rgb(255, 255, 255);
+    }
+    
+    .dot{
+        background: rgb(255, 255, 255);
+        border: 2px solid gray;
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        margin: 2px 0;
+        z-index: 2;
+        margin-right: 15px;
+        
+        &:last-child{
+            margin-right: 0;
+        }
+
+        &:hover{
+            cursor: pointer;
+        }
+
+        &.activeStep{
+            background: #bf00ff;
+            border: 2px solid rgb(0, 115, 255);
+            // animation: fill;
+            transition: border .5s;
+        }
+    }
+}
+
+/* @keyframes fill {
+    0%{
+        background: rgb(255, 255, 255);
+        border: 2px solid gray;
+    }
+} */
+

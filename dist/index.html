@@ -10,7 +10,7 @@
 </head>
 <body>
     <section class="p-relative wPerc-100 vh-100">
-      <button class="responsiveMenuButton"><i class="fa-solid fa-bars"></i></button>
+      <button class="responsiveMenuButton"><img src="./images/menu-bars.png" alt=""></button>
       <nav class="responsiveNav">
         <ul>
           <li><a href="" class="text-black">Work</a></li>
@@ -25,28 +25,45 @@
       </div>
       <img src="./images/pp.jpg" class="hPerc-100 wPerc-100 cover z-below brightness-02 top-0 left-0 p-absolute" alt="profile photo">
     </section>
-    <section class="wPerc-100 vh-100 d-flex ai-center jc-center bg-black mPx-bottom-10">
+    <section class="wPerc-100 vh-100 d-flex ai-center jc-center bg-lightGray">
       <div class="mVw-left-8">
-        <h1 class="text-white fz-4 mPx-bottom-20">About Me</h1>
-        <p class="text-white fz-2">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam quaerat rerum accusamus sequi cum reprehenderit incidunt officiis, dicta libero quibusdam fugiat voluptatem omnis voluptatibus, eaque quasi vero suscipit. Placeat, assumenda.</p>
+        <h1 class="text-lightBlack fz-4 mPx-bottom-20">About Me</h1>
+        <p class="text-lightBlack fz-2">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam quaerat rerum accusamus sequi cum reprehenderit incidunt officiis, dicta libero quibusdam fugiat voluptatem omnis voluptatibus, eaque quasi vero suscipit. Placeat, assumenda.</p>
       </div>
     </section>
-    <section class="wPerc-100 vh-100 d-flex ai-center jc-center bg-black">
-      <div class="carousel">
-        <div class="card">
-          <div class="image"></div>
-          <div class="projectSummary">
-            <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio dignissimos eius, sapiente fugiat quis quo tempora eaque ipsum nisi, veniam amet aspernatur nemo vel maiores et laboriosam voluptate esse repudiandae!</p>
-            <div class="githubLink">
-              <img src="./images/github-logo.png" alt="">
-              <a href="">Project Github</a>
-            </div>
-          </div>
+    <section class="wPerc-100 vh-100 bg-lightGray p-relative" id="workSection">
+      <div class="slideshow">
+        <div class="container">
+          <!-- Dynamic content injected by ts -->
         </div>
       </div>
+      <ul class="dots">
+        <span class="progress"></span>
+        <span class="percent"></span>
+        <!-- Dynamic content injected by ts -->
+      </ul>
     </section>
-    <section class="slide"></section>
-    <section class="slide"></section>
+    <section class="wPerc-100 vh-100 bg-lightGray p-relative d-flex f-dir-column ai-center">
+      <h1 class="fz-4 mPx-top-20">Write Me</h1>
+      <form id="contact-form" action="">
+        <div class="input-group">
+          <input type="text" id="name" name="name" placeholder=" ">
+          <label for="name" class="">Full Name</label>
+        </div>
+        <div class="input-group">
+          <input type="email" id="email" name="email" placeholder=" ">
+          <label for="email" class="">Email</label>
+        </div>
+        <div class="input-group">
+          <input type="text" id="subject" name="subject" placeholder=" ">
+          <label for="subject" class="">Subject</label>
+        </div>
+        <div class="input-group">
+          <textarea name="message" id="message" cols="30" rows="10" placeholder=" "></textarea>
+          <label for="message" class="">Message</label>
+        </div>
+      </form>
+    </section>
     <script src="./script/script.js"></script>
 </body>
 </html>

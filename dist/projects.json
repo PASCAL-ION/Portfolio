@@ -1,0 +1,37 @@
+[
+    {
+        "title" : "Site vitrine",
+        "image" : "https://www.webetsolutions.com/wp-content/uploads/2018/04/site-vitrine_1010x475.jpg",
+        "alt" : "seo project image",
+        "text": "During this project I optimized the referencing of an existing website",
+        "githubLink": "test"
+    },
+    {
+        "title" : "SEO optimisation",
+        "image" : "https://www.markentive.com/hubfs/agence-seo.jpg",
+        "alt" : "seo project image",
+        "text": "During this project I optimized the referencing of an existing website",
+        "githubLink": "test"
+    },
+    {
+        "title" : "API CRUD",
+        "image" : "https://dhananjay25.files.wordpress.com/2017/03/image2.png",
+        "alt" : "seo project image",
+        "text": "During this project I optimized the referencing of an existing website",
+        "githubLink": "test"
+    },
+    {
+        "title" : "ReactJs",
+        "image" : "https://solvers.fr/wp-content/uploads/2019/06/8-astuces-pour-ame%CC%81liorer-les-performances-des-applications-React.png",
+        "alt" : "seo project image",
+        "text": "During this project I optimized the referencing of an existing website",
+        "githubLink": "test"
+    },
+    {
+        "title" : "Animations css",
+        "image" : "data:image/png;base64,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",
+        "alt" : "seo project image",
+        "text": "During this project I optimized the referencing of an existing website",
+        "githubLink": "test"
+    }
+]

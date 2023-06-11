@@ -31,11 +31,6 @@ function reload() {
   browserSync.init({
     server: {
       baseDir: "./dist",
-    },
-    serveStaticOptions: {
-      extensions: ['css'],
-      // désactiver le strict MIME checking
-      strict: false
     }
   });
   gulp.watch(['./app/**/*.scss', './app/**/*.ts', './dist/*.html']).on('change', browserSync.reload);
