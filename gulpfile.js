@@ -5,10 +5,15 @@ const cleanCss = require('gulp-clean-css'); //minifie le css
 const concat = require('gulp-concat'); // permet de concaténer les fichiers
 const uglify = require('gulp-uglify'); // minifie le js
 const ts = require('gulp-typescript');
+const plumber = require('gulp-plumber');
 const browserSync = require('browser-sync').create();
 
 async function tsCompileTask() {
   return gulp.src('./app/**/*.ts')
+  .pipe(plumber(function (error) {
+    console.log(error);
+    this.emit('end');
+  }))
     .pipe(ts())
     .pipe(uglify())
     .pipe(concat('script.js'))

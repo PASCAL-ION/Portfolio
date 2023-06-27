@@ -18,7 +18,7 @@
     .container{
         // border: 3px solid green;
         height: 100%;
-        width: 100%;
+        // width: 100%;
         overflow-x: scroll;
         scroll-snap-type: x mandatory;
         display: flex;
@@ -34,14 +34,17 @@
             justify-content: center;
             align-items: center;
             //----------------------
-            // margin-right: 60px;
+            // margin-right: 30px;
+            // &:last-child{
+            //     margin-right: 0;
+            // }
         }
     }
 
 }
 .dots{
     position: absolute;
-    top: 95%;
+    top: 90%;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
@@ -60,7 +63,7 @@
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
-        background: rgb(0, 17, 255);
+        background: rgb(0, 0, 0);
         width: 0;
         height: 2px;
         transition: width .5s;
@@ -93,9 +96,9 @@
             cursor: pointer;
         }
 
-        &.activeStep{
-            background: #bf00ff;
-            border: 2px solid rgb(0, 115, 255);
+        &.activeStep, &.completed{
+            background: #e1ff00;
+            border: 2px solid rgb(0, 0, 0);
             // animation: fill;
             transition: border .5s;
         }

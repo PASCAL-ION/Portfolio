@@ -10,8 +10,7 @@ const progressBar = document.querySelector(".dots .progress") as HTMLElement
 const progressionPercentage = document.querySelector(".dots .percent") as HTMLElement
 
 
-
-
+const jsonPath = './projects.json'
 
 button?.addEventListener('click', () => { // Vérifie que le bouton existe avant d'ajouter l'écouteur d'événement
   responsiveNav.classList.toggle("open")
@@ -25,7 +24,6 @@ interface MyData {
   githubLink: string;
 }
 
-const jsonPath = './projects.json'
 
 async function getData(){
   let response = await fetch(jsonPath);
@@ -39,7 +37,7 @@ getData()
     //create the dom elements
     carouselContainer.innerHTML += ` 
         <div class="slide">
-          <div class="card">
+          <div class="card" id=${i}>
             <img src=${project.image} alt=${project.alt} id="image">
             <div class="projectSummary">
               <h1 id="title">${project.title}</h1>
@@ -51,9 +49,13 @@ getData()
             </div>
           </div>
         </div>`;
-      })
-  
+  })
+  const slide = document.querySelector(".slide") as HTMLElement //select just one slide and use its width to calculate the carousel width 'cause all slides have the same width
   const slides = document.querySelectorAll(".slide") as NodeListOf<HTMLElement>
+  const slideWidth = slide.offsetWidth
+  const carouselWidth: number = slides.length * slideWidth;
+  
+  
 
   slides.forEach((slide, index) => {
     const dot = document.createElement('li');
@@ -68,27 +70,59 @@ getData()
 
   //modify the way of animating the points to be able to change the slides
   //remove the class "activeStep" if the dot is not actually clicked but keep the color of the dot 
-
+  
+  const allDots = document.querySelectorAll(".dot")
   function progress(dotId: number){    
-    let p = dotId * 25
-    progressionPercentage.style.width = `${p}%`;
-    const allDots = document.querySelectorAll(".dot")
+    /* let p = dotId * 25
+    progressionPercentage.style.width = `${p}%`; */
 
     allDots.forEach(element => {
       const elementId = parseInt(element.id)
-      if(elementId == dotId){
-        
+      if(elementId === dotId){
         element.classList.add("activeStep")
+        element.classList.remove("completed")
+        changeSlide(dotId)
       }
       if(elementId < dotId){
-        element.classList.add("activeStep")
+        element.classList.add("completed")
+        element.classList.remove("activeStep")
+
       }
       if(elementId > dotId){
         element.classList.remove("activeStep")
+        element.classList.remove("completed")
       }
     });
-    
   }
+
+  function changeSlide(dotId: number){
+    carouselContainer.scrollTo({
+      left: 375 * dotId, // Position horizontale souhaitée
+      behavior: 'smooth' // Animation fluide du défilement
+    });
+
+  }
+  carouselContainer.addEventListener('scroll', () => {
+    const scrollLeft = carouselContainer.scrollLeft;
+    console.log("ScrollLeft : ", scrollLeft);
+    
+    const slideWidth = carouselContainer.clientWidth;
+    const currentSlideIndex = Math.round(scrollLeft / slideWidth);
+    
+    updateProgress(currentSlideIndex);
+  });
   
+  function updateProgress(currentSlideIndex: number) {
+    allDots.forEach((dot, index) => {
+      dot.classList.toggle("activeStep", index === currentSlideIndex);
+      dot.classList.toggle("completed", index < currentSlideIndex);
+    });
+    const progressWidth = (currentSlideIndex +1) * slideWidth;
+    console.log("progressWidth : ", progressWidth);
+    progressionPercentage.style.width = `${(progressWidth / carouselWidth) * 100}%`;
+    console.log("progressionPercentage : ", progressionPercentage.style.width = `${(progressWidth / carouselWidth) * 100}%`);
+  }
 } 
+
+
 ).catch(err => console.log(err))
