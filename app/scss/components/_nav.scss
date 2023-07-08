@@ -16,7 +16,7 @@
     transform: translateX(-100%);
     transition: transform .5s;
 
-    @include respond(tablet){
+    @include respond(desktop){
         transform: translateX(0);
         align-items: flex-start;
         background: #00000000;
@@ -29,7 +29,7 @@
         justify-content: space-around;
         height: 70%;
 
-        @include respond(tablet){
+        @include respond(desktop){
             flex-direction: row;
             width: 80vh;
             height: 10%;
@@ -37,7 +37,7 @@
         
         li{
             a{
-                @include respond(tablet){
+                @include respond(desktop){
                     color: rgb(201, 201, 201);
                 }
                 font-size: clamp(14px, 3vh, 40px);
@@ -79,7 +79,7 @@
     background: #00000000;
     z-index: 1;
 
-    @include respond(tablet){
+    @include respond(desktop){
         display: none;
     }
 

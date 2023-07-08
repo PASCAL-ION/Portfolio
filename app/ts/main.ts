@@ -44,7 +44,7 @@ getData()
               <p id="text">${project.text}</p>
               <div id="githubLink">
                 <img src="../images/github-logo.png" alt="">
-                <a href="">Project Github</a>
+                <a href="">Github repository</a>
               </div>
             </div>
           </div>
@@ -55,7 +55,47 @@ getData()
   const slideWidth = slide.offsetWidth
   const carouselWidth: number = slides.length * slideWidth;
   
-  
+
+  function handleScreenSize(){
+
+    const windowWidth = window.innerWidth;
+
+    if(windowWidth > 768){
+      slides.forEach((slide) => {
+        slide.addEventListener("click", slideClickHandler(slide));
+      });
+      
+      function slideClickHandler(slide) {
+        return function () {
+          const backgroundDiv = document.createElement("div");
+          backgroundDiv.classList.add("backgroundDiv");
+          document.querySelector("#workSection").appendChild(backgroundDiv);
+          backgroundDiv.addEventListener("click", backgroundDivClickHandler.bind(null, slide));
+      
+          slide.classList.add("growCard");
+          if (slide.classList.contains("growCard")) {
+            slide.querySelector(".card").classList.remove("card");
+          }
+          const card = slide.querySelector("div");
+          card.classList.add("no-hover", "desktopCard");
+          slide.removeEventListener("click", slideClickHandler);
+        };
+      }
+      
+      function backgroundDivClickHandler(slide) {
+        slide.classList.remove("growCard");
+        const card = slide.querySelector("div");
+        card.classList.remove("no-hover", "desktopCard");
+        card.classList.add("card");
+        console.log(this);
+        
+      }
+    }
+  }
+window.addEventListener("resize", handleScreenSize); //call the function on screen resizing
+
+window.addEventListener("load", handleScreenSize); //call the function on page load
+
 
   slides.forEach((slide, index) => {
     const dot = document.createElement('li');
