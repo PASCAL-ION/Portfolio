@@ -11,18 +11,19 @@
   }
 
 #workSection{
-    .backgroundDiv{
+    #closeCardBackground{
         position: absolute;
+        display: none;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
         width: 100vw;
         height: 100vh;
-        background: #c1c1c1a6;
-        
+        background: #c1c1c1a8;
+        z-index: 1;
     
         &:hover{
-            cursor: crosshair;
+            cursor: pointer;
         }
     }
 }
@@ -33,6 +34,7 @@
     width: 100%;
     // border: 3px solid yellow;
 
+
     .container{
         // border: 3px solid green;
         height: 100%;
@@ -41,6 +43,7 @@
         scroll-snap-type: x mandatory;
         display: flex;
         align-items: center;
+
 
         @include respond(desktop){
             flex-wrap: wrap;
@@ -57,6 +60,7 @@
             /* display: flex;
             justify-content: center;
             align-items: center; */
+            transition: all 0.5 ease;
             
             @include respond(desktop){
                 width: 30%;

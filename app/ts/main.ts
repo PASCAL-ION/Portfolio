@@ -1,3 +1,5 @@
+// import { languageChange } from './language-change';
+
 const button = document.querySelector('.responsiveMenuButton');
 const responsiveNav = document.querySelector(".responsiveNav") as HTMLElement;
 const projectImage = document.querySelector("#image") as HTMLImageElement;
@@ -10,7 +12,8 @@ const progressBar = document.querySelector(".dots .progress") as HTMLElement
 const progressionPercentage = document.querySelector(".dots .percent") as HTMLElement
 
 
-const jsonPath = './projects.json'
+
+const jsonPath = './projectsFR.json'
 
 button?.addEventListener('click', () => { // Vérifie que le bouton existe avant d'ajouter l'écouteur d'événement
   responsiveNav.classList.toggle("open")
@@ -40,21 +43,24 @@ getData()
           <div class="card" id=${i}>
             <img src=${project.image} alt=${project.alt} id="image">
             <div class="projectSummary">
-              <h1 id="title">${project.title}</h1>
-              <p id="text">${project.text}</p>
+              <h1 id="title" class="translatable">${project.title}</h1>
+              <p id="text" class="translatable">${project.text}</p>
               <div id="githubLink">
                 <img src="../images/github-logo.png" alt="">
-                <a href="">Github repository</a>
+                <a href="https://www.google.fr/" class="translatable">Github repository</a>
               </div>
             </div>
           </div>
         </div>`;
   })
-  const slide = document.querySelector(".slide") as HTMLElement //select just one slide and use its width to calculate the carousel width 'cause all slides have the same width
+  const slide = document.querySelector(".slide") as HTMLElement //select just one slide and use its width to calculate the carousel width (all slides have the same width)
   const slides = document.querySelectorAll(".slide") as NodeListOf<HTMLElement>
   const slideWidth = slide.offsetWidth
   const carouselWidth: number = slides.length * slideWidth;
-  
+
+  /* function changeLanguage(){
+    
+  } */
 
   function handleScreenSize(){
 
@@ -64,36 +70,39 @@ getData()
       slides.forEach((slide) => {
         slide.addEventListener("click", slideClickHandler(slide));
       });
-      
+
+      const closeCardBackground = document.querySelector("#closeCardBackground") as HTMLElement
+      closeCardBackground.addEventListener("click", closeCard);
+
       function slideClickHandler(slide) {
         return function () {
-          const backgroundDiv = document.createElement("div");
-          backgroundDiv.classList.add("backgroundDiv");
-          document.querySelector("#workSection").appendChild(backgroundDiv);
-          backgroundDiv.addEventListener("click", backgroundDivClickHandler.bind(null, slide));
-      
+          document.body.style.overflow = "hidden" //stop the page scroll
+          closeCardBackground.style.display = "block"
+          
           slide.classList.add("growCard");
           if (slide.classList.contains("growCard")) {
             slide.querySelector(".card").classList.remove("card");
           }
           const card = slide.querySelector("div");
-          card.classList.add("no-hover", "desktopCard");
+          card.classList.add(/* "no-hover",  */"desktopCard");
+          
           slide.removeEventListener("click", slideClickHandler);
         };
       }
-      
-      function backgroundDivClickHandler(slide) {
-        slide.classList.remove("growCard");
-        const card = slide.querySelector("div");
-        card.classList.remove("no-hover", "desktopCard");
-        card.classList.add("card");
-        console.log(this);
-        
+
+      function closeCard(){
+        const actuelOpenCard = document.querySelector(".growCard") as HTMLElement
+        actuelOpenCard.classList.remove("growCard")
+        actuelOpenCard.querySelector("div:first-child").classList.remove(/* "no-hover",  */"desktopCard")
+        actuelOpenCard.querySelector("div:first-child").classList.add("card")
+        closeCardBackground.style.display = "none"
+        document.body.style.overflow = "scroll" //allow the page scroll
       }
+      
+      
     }
   }
 window.addEventListener("resize", handleScreenSize); //call the function on screen resizing
-
 window.addEventListener("load", handleScreenSize); //call the function on page load
 
 

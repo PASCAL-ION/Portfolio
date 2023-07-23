@@ -10,28 +10,33 @@
 </head>
 <body>
     <section class="p-relative wPerc-100 vh-100">
+      <select id="language-selector">
+        <option value="en">English</option>
+        <option value="fr">Français</option>
+    </select>
       <button class="responsiveMenuButton"><img src="./images/menu-bars.png" alt=""></button>
       <nav class="responsiveNav">
         <ul>
-          <li><a href="" class="text-black">Work</a></li>
-          <li><a href="" class="text-black">About</a></li>
-          <li><a href="" class="text-black">Contact</a></li>
-          <li><a href="" class="text-black">Resume</a></li>
+          <li><a href="" class="text-black translatable">Work</a></li>
+          <li><a href="" class="text-black translatable">About</a></li>
+          <li><a href="" class="text-black translatable">Contact</a></li>
+          <li><a href="" class="text-black translatable">Resume</a></li>
         </ul>
       </nav>
       <div class="hPerc-100 flexYcenter mVw-left-8">
-        <h1 class="text-white fz-4">Hi, I'm Ion. <br> A Junior Frontend Developper</h1>
-        <p class="text-white text-left">Lat asptem. Natus dicta voluptas unde dolor at veritatis ut.</p>
+        <h1 class="text-white fz-4 translatable">Hi, I'm Ion. <br> A Junior Frontend Developper</h1>
+        <p class="text-white text-left translatable">Lat asptem. Natus dicta voluptas unde dolor at veritatis ut.</p>
       </div>
       <img src="./images/pp.jpg" class="hPerc-100 wPerc-100 cover z-below brightness-02 top-0 left-0 p-absolute" alt="profile photo">
     </section>
     <section class="wPerc-100 vh-100 d-flex ai-center jc-center bg-lightGray">
       <div class="mVw-left-8">
-        <h1 class="text-lightBlack fz-4 mPx-bottom-20">About Me</h1>
-        <p class="text-lightBlack fz-2">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam quaerat rerum accusamus sequi cum reprehenderit incidunt officiis, dicta libero quibusdam fugiat voluptatem omnis voluptatibus, eaque quasi vero suscipit. Placeat, assumenda.</p>
+        <h1 class="text-lightBlack fz-4 mPx-bottom-20 translatable">About Me</h1>
+        <p class="text-lightBlack fz-2 translatable">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam quaerat rerum accusamus sequi cum reprehenderit incidunt officiis, dicta libero quibusdam fugiat voluptatem omnis voluptatibus, eaque quasi vero suscipit. Placeat, assumenda.</p>
       </div>
     </section>
     <section class="wPerc-100 vh-100 bg-lightGray p-relative" id="workSection">
+      <div id="closeCardBackground"></div> <!-- only on desktop -->
       <div class="slideshow">
         <div class="container">
           <!-- Dynamic content injected by ts -->
