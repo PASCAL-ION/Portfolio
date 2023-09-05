@@ -1,6 +1,6 @@
 // import { languageChange } from './language-change';
 
-const button = document.querySelector('.responsiveMenuButton');
+const responsiveMenuButton = document.querySelector('.responsiveMenuButton');
 const responsiveNav = document.querySelector(".responsiveNav") as HTMLElement;
 const projectImage = document.querySelector("#image") as HTMLImageElement;
 const projectTitle = document.querySelector("#title") as HTMLElement;
@@ -10,12 +10,14 @@ const carouselContainer = document.querySelector(".container") as HTMLElement
 const dotsContainer = document.querySelector(".dots") as HTMLElement
 const progressBar = document.querySelector(".dots .progress") as HTMLElement
 const progressionPercentage = document.querySelector(".dots .percent") as HTMLElement
+const closeCardBackground = document.querySelector("#closeCardBackground") as HTMLElement;
+
 
 
 
 const jsonPath = './projectsFR.json'
 
-button?.addEventListener('click', () => { // Vérifie que le bouton existe avant d'ajouter l'écouteur d'événement
+responsiveMenuButton?.addEventListener('click', () => { // Vérifie que le bouton existe avant d'ajouter l'écouteur d'événement
   responsiveNav.classList.toggle("open")
 });
 
@@ -40,7 +42,7 @@ getData()
     //create the dom elements
     carouselContainer.innerHTML += ` 
         <div class="slide">
-          <div class="card" id=${i}>
+          <div class="mobileCard" id=${i}>
             <img src=${project.image} alt=${project.alt} id="image">
             <div class="projectSummary">
               <h1 id="title" class="translatable">${project.title}</h1>
@@ -58,52 +60,91 @@ getData()
   const slideWidth = slide.offsetWidth
   const carouselWidth: number = slides.length * slideWidth;
 
-  /* function changeLanguage(){
-    
-  } */
+  
+  window.addEventListener("resize", handleScreenSize); //call the function on screen resizing
+  window.addEventListener("load", handleScreenSize); //call the function on page load
 
   function handleScreenSize(){
-
     const windowWidth = window.innerWidth;
 
     if(windowWidth > 768){
-      slides.forEach((slide) => {
-        slide.addEventListener("click", slideClickHandler(slide));
-      });
-
-      const closeCardBackground = document.querySelector("#closeCardBackground") as HTMLElement
-      closeCardBackground.addEventListener("click", closeCard);
-
-      function slideClickHandler(slide) {
-        return function () {
-          document.body.style.overflow = "hidden" //stop the page scroll
-          closeCardBackground.style.display = "block"
-          
-          slide.classList.add("growCard");
-          if (slide.classList.contains("growCard")) {
-            slide.querySelector(".card").classList.remove("card");
-          }
-          const card = slide.querySelector("div");
-          card.classList.add(/* "no-hover",  */"desktopCard");
-          
-          slide.removeEventListener("click", slideClickHandler);
-        };
-      }
-
-      function closeCard(){
-        const actuelOpenCard = document.querySelector(".growCard") as HTMLElement
-        actuelOpenCard.classList.remove("growCard")
-        actuelOpenCard.querySelector("div:first-child").classList.remove(/* "no-hover",  */"desktopCard")
-        actuelOpenCard.querySelector("div:first-child").classList.add("card")
-        closeCardBackground.style.display = "none"
-        document.body.style.overflow = "scroll" //allow the page scroll
-      }
-      
-      
+      addClickHandlerToCard()
+    } else if (windowWidth < 768) {
+      removeClickHandlerFromCard()
+      return
     }
   }
-window.addEventListener("resize", handleScreenSize); //call the function on screen resizing
-window.addEventListener("load", handleScreenSize); //call the function on page load
+
+  function addClickHandlerToCard(){
+    slides.forEach((slide) => {
+      slide.addEventListener("click", cardClickHandler);
+    });
+  }
+
+  function removeClickHandlerFromCard(){
+    slides.forEach((slide) => {
+      slide.removeEventListener("click", cardClickHandler);
+    });
+  }
+
+  function cardClickHandler(event: Event) {
+    const slide = event.currentTarget as HTMLElement;
+    const cardSelector = ".mobileCard";
+    const closeCardBackground = document.getElementById("closeCardBackground");
+    
+    if (!slide || !closeCardBackground) {
+      return; // Break the function
+    }
+  
+    document.body.style.overflow = "hidden";
+    closeCardBackground.style.display = "block";
+  
+    function slideOpenAndTransformToDesktop() {
+      slide.classList.add("slideOpen");
+      const card = slide.querySelector(cardSelector) as HTMLElement;
+      if (card) {
+        card.classList.add("desktopCard");
+      }
+    }
+    function removeHoverEffect() {
+      const card = slide.querySelector(cardSelector) as HTMLElement;
+      if (card) {
+        card.classList.remove("mobileCard");
+      }
+    }
+    slideOpenAndTransformToDesktop();
+    removeHoverEffect();
+  }
+
+  if(closeCardBackground){
+    closeCardBackground.addEventListener("click", closeCard);
+  }else{
+    console.log("closeCardBackground not found");
+    
+  }
+  
+function closeCard() {
+  const actuelOpenCard = document.querySelector(".slideOpen") as HTMLElement;
+
+  if(actuelOpenCard){
+    const cardContent = actuelOpenCard.querySelector("div:first-child") as HTMLElement;
+
+    actuelOpenCard.classList.remove("slideOpen");
+    cardContent.classList.remove("desktopCard");
+    cardContent.classList.add("mobileCard");
+  }
+  
+  closeCardBackground.style.display = "none";
+  document.body.style.overflow = "scroll"; // Allow the page scroll
+}
+
+
+
+
+
+
+
+
 
 
   slides.forEach((slide, index) => {
@@ -153,7 +194,7 @@ window.addEventListener("load", handleScreenSize); //call the function on page l
   }
   carouselContainer.addEventListener('scroll', () => {
     const scrollLeft = carouselContainer.scrollLeft;
-    console.log("ScrollLeft : ", scrollLeft);
+    // console.log("ScrollLeft : ", scrollLeft);
     
     const slideWidth = carouselContainer.clientWidth;
     const currentSlideIndex = Math.round(scrollLeft / slideWidth);
@@ -167,11 +208,14 @@ window.addEventListener("load", handleScreenSize); //call the function on page l
       dot.classList.toggle("completed", index < currentSlideIndex);
     });
     const progressWidth = (currentSlideIndex +1) * slideWidth;
-    console.log("progressWidth : ", progressWidth);
+    // console.log("progressWidth : ", progressWidth);
     progressionPercentage.style.width = `${(progressWidth / carouselWidth) * 100}%`;
-    console.log("progressionPercentage : ", progressionPercentage.style.width = `${(progressWidth / carouselWidth) * 100}%`);
+    // console.log("progressionPercentage : ", progressionPercentage.style.width = `${(progressWidth / carouselWidth) * 100}%`);
   }
 } 
 
 
 ).catch(err => console.log(err))
+
+
+// export {getData};

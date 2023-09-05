@@ -9,7 +9,8 @@
   <title>Document</title>
 </head>
 <body>
-    <section class="p-relative wPerc-100 vh-100">
+  <div class="snap-container">
+    <section class="p-relative wPerc-100 vh-100 snap-section" id="section1">
       <select id="language-selector">
         <option value="en">English</option>
         <option value="fr">Français</option>
@@ -29,13 +30,13 @@
       </div>
       <img src="./images/pp.jpg" class="hPerc-100 wPerc-100 cover z-below brightness-02 top-0 left-0 p-absolute" alt="profile photo">
     </section>
-    <section class="wPerc-100 vh-100 d-flex ai-center jc-center bg-lightGray">
+    <section class="wPerc-100 vh-100 d-flex ai-center jc-center bg-lightGray snap-section" id="section2">
       <div class="mVw-left-8">
         <h1 class="text-lightBlack fz-4 mPx-bottom-20 translatable">About Me</h1>
         <p class="text-lightBlack fz-2 translatable">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam quaerat rerum accusamus sequi cum reprehenderit incidunt officiis, dicta libero quibusdam fugiat voluptatem omnis voluptatibus, eaque quasi vero suscipit. Placeat, assumenda.</p>
       </div>
     </section>
-    <section class="wPerc-100 vh-100 bg-lightGray p-relative" id="workSection">
+    <section class="wPerc-100 vh-100 bg-lightGray p-relative snap-section" id="workSection section3">
       <div id="closeCardBackground"></div> <!-- only on desktop -->
       <div class="slideshow">
         <div class="container">
@@ -48,7 +49,7 @@
         <!-- Dynamic content injected by ts -->
       </ul>
     </section>
-    <section class="wPerc-100 vh-100 bg-lightGray p-relative d-flex f-dir-column ai-center">
+    <section class="wPerc-100 vh-100 bg-lightGray p-relative d-flex f-dir-column ai-center snap-section" id="section4">
       <h1 class="fz-4 mPx-top-20">Write Me</h1>
       <form id="contact-form" action="">
         <div class="input-group">
@@ -69,6 +70,7 @@
         </div>
       </form>
     </section>
+  </div>
     <script src="./script/script.js"></script>
 </body>
 </html>
