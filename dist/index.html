@@ -10,65 +10,80 @@
 </head>
 <body>
   <div class="snap-container">
-    <section class="p-relative wPerc-100 vh-100 snap-section" id="section1">
-      <select id="language-selector">
-        <option value="en">English</option>
-        <option value="fr">Français</option>
-    </select>
-      <button class="responsiveMenuButton"><img src="./images/menu-bars.png" alt=""></button>
-      <nav class="responsiveNav">
-        <ul>
-          <li><a href="" class="text-black translatable">Work</a></li>
-          <li><a href="" class="text-black translatable">About</a></li>
-          <li><a href="" class="text-black translatable">Contact</a></li>
-          <li><a href="" class="text-black translatable">Resume</a></li>
-        </ul>
-      </nav>
-      <div class="hPerc-100 flexYcenter mVw-left-8">
-        <h1 class="text-white fz-4 translatable">Hi, I'm Ion. <br> A Junior Frontend Developper</h1>
-        <p class="text-white text-left translatable">Lat asptem. Natus dicta voluptas unde dolor at veritatis ut.</p>
-      </div>
-      <img src="./images/pp.jpg" class="hPerc-100 wPerc-100 cover z-below brightness-02 top-0 left-0 p-absolute" alt="profile photo">
-    </section>
-    <section class="wPerc-100 vh-100 d-flex ai-center jc-center bg-lightGray snap-section" id="section2">
-      <div class="mVw-left-8">
-        <h1 class="text-lightBlack fz-4 mPx-bottom-20 translatable">About Me</h1>
-        <p class="text-lightBlack fz-2 translatable">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam quaerat rerum accusamus sequi cum reprehenderit incidunt officiis, dicta libero quibusdam fugiat voluptatem omnis voluptatibus, eaque quasi vero suscipit. Placeat, assumenda.</p>
+    <section class="home-section snap-scroll-section" id="section1">
+      <div class="homeContainer">
+        <select id="language-selector">
+          <option value="en">English</option>
+          <option value="fr">Français</option>
+        </select>
+        <button class="homeContainer__responsiveMenuButton"><img src="./images/menu-bars.png" alt=""></button>
+        <nav class="homeContainer__responsiveNav">
+          <ul>
+            <li><a href="">Work</a></li>
+            <li><a href="">About</a></li>
+            <li><a href="">Contact</a></li>
+            <li><a href="">Resume</a></li>
+          </ul>
+        </nav>
+        <div class="homeContainer__presentationText">
+          <h1 class="homeContainer__title">Hi, I'm Ion. <br> A Junior Frontend Developper</h1>
+          <p class="homeContainer__text">Lat asptem. Natus dicta voluptas unde dolor at veritatis ut.</p>
+        </div>
+        <img src="./images/pp.jpg" class="homeContainer__bgImage" alt="profile photo">
       </div>
     </section>
-    <section class="wPerc-100 vh-100 bg-lightGray p-relative snap-section" id="workSection section3">
-      <div id="closeCardBackground"></div> <!-- only on desktop -->
-      <div class="slideshow">
-        <div class="container">
+    <section class="about-section snap-scroll-section" id="section2">
+      <div class="aboutContainer">
+          <div class="aboutContainer__presentationTextContainer">
+            <h1 class="aboutContainer__title">about me</h1>
+            <p class="aboutContainer__text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam quaerat rerum accusamus sequi cum reprehenderit incidunt officiis, dicta libero quibusdam fugiat voluptatem omnis voluptatibus, eaque quasi vero suscipit. Placeat, assumenda.</p>
+          </div>
+          <div class="aboutContainer__btnsContainer">
+            <button class="aboutContainer__btn aboutContainer__skillsBtn">skills</button>
+            <button class="aboutContainer__btn aboutContainer__familiarityBtn">familiarity</button>
+          </div>
+      </div>
+    </section>
+    <section class="work-section snap-scroll-section" id="section3">
+      <div class="workContainer">
+        <div id="workContainer__closeCardBackground"></div> <!-- only on desktop -->
+      
+      <div class="workContainer__slideshow">
+        <div class="workContainer__container">
           <!-- Dynamic content injected by ts -->
         </div>
       </div>
-      <ul class="dots">
-        <span class="progress"></span>
-        <span class="percent"></span>
+      <ul class="workContainer__dots">
+        <span class="workContainer__progress"></span>
+        <span class="workContainer__percent"></span>
         <!-- Dynamic content injected by ts -->
       </ul>
+    </div>
     </section>
-    <section class="wPerc-100 vh-100 bg-lightGray p-relative d-flex f-dir-column ai-center snap-section" id="section4">
-      <h1 class="fz-4 mPx-top-20">Write Me</h1>
-      <form id="contact-form" action="">
-        <div class="input-group">
-          <input type="text" id="name" name="name" placeholder=" ">
-          <label for="name" class="">Full Name</label>
+    <section class="contact-section snap-scroll-section" id="section4">
+      <div class="contactContainer">
+        <div class="contactContainer__h1Container">
+          <h1 class="contactContainer__h1">Write Me</h1>
         </div>
-        <div class="input-group">
-          <input type="email" id="email" name="email" placeholder=" ">
-          <label for="email" class="">Email</label>
-        </div>
-        <div class="input-group">
-          <input type="text" id="subject" name="subject" placeholder=" ">
-          <label for="subject" class="">Subject</label>
-        </div>
-        <div class="input-group">
-          <textarea name="message" id="message" cols="30" rows="10" placeholder=" "></textarea>
-          <label for="message" class="">Message</label>
-        </div>
-      </form>
+        <form class="contactContainer__contact-form" action="">
+          <div class="contactContainer__input-group">
+            <input type="text" id="name" name="name" placeholder=" ">
+            <label for="name" class="contactContainer__label contactContainer__fullNameLabel">Full Name</label>
+          </div>
+          <div class="contactContainer__input-group">
+            <input type="email" id="email" name="email" placeholder=" ">
+            <label for="email" class="contactContainer__label contactContainer__emailLabel">Email</label>
+          </div>
+          <div class="contactContainer__input-group">
+            <input type="text" id="subject" name="subject" placeholder=" ">
+            <label for="subject" class="contactContainer__label contactContainer__subjectLabel">Subject</label>
+          </div>
+          <div class="contactContainer__input-group">
+            <textarea name="message" id="message" cols="30" rows="10" placeholder=" "></textarea>
+            <label for="message" class="contactContainer__label contactContainer__messageLabel">Message</label>
+          </div>
+        </form>
+      </div>
     </section>
   </div>
     <script src="./script/script.js"></script>

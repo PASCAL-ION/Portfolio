@@ -1,25 +1,25 @@
 //*************************** Base ********************************
 @import "./base/reset";
-
-//*************************** Utilities ********************************
-@import "./utilities/spacing";
-@import "./utilities/align&justify";
-@import "./utilities/layout";
-@import "./utilities/text-align";
-@import "./utilities/font-size";
-@import "./utilities/typography";
-@import "./utilities/width&hight";
-@import "./utilities/positions";
-@import "./utilities/imgProperties";
-@import "./utilities/colors";
+@import "./base/sections.scss";
 
 //*************************** Components ********************************
-@import "./components/nav";
-@import "./components/card";
-@import "./components/carousel";
-@import "./components/contact-form";
 @import "./components/language-selector";
 
 //*************************** Features ********************************
-@import "./features/snap-scroll.scss"
+@import "./features/snap-scroll.scss";
+
+//*************************** Pages ********************************
+//Home
+@import "./pages/home/home.scss";
+@import "./pages/home/nav.scss";
+
+//about
+@import "./pages/about.scss"; 
+
+//work
+@import "./pages/work/card.scss";
+@import "./pages/work/carousel.scss";
+
+//contact
+@import "./pages/contact.scss";
 

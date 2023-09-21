@@ -1,14 +1,9 @@
-.snap-container{
-    height: 100vh;
+body {
     overflow: hidden;
-    // position: fixed;
-    // border: 4px solid orange;
 }
 
-.snap-section {
+.snap-scroll-section {
+    width: 100vw;
     height: 100vh;
     scroll-snap-align: start;
-    overflow-y: scroll;
-    // border: 4px solid green;
-
 }

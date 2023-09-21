@@ -1,16 +1,16 @@
 // import { languageChange } from './language-change';
 
-const responsiveMenuButton = document.querySelector('.responsiveMenuButton');
-const responsiveNav = document.querySelector(".responsiveNav") as HTMLElement;
+const responsiveMenuButton = document.querySelector('.homeContainer__responsiveMenuButton');
+const responsiveNav = document.querySelector(".homeContainer__responsiveNav") as HTMLElement;
 const projectImage = document.querySelector("#image") as HTMLImageElement;
 const projectTitle = document.querySelector("#title") as HTMLElement;
 const projectText = document.querySelector("#text") as HTMLElement;
 const projectGithubLink = document.querySelector("#githubLink") as HTMLElement;
-const carouselContainer = document.querySelector(".container") as HTMLElement
-const dotsContainer = document.querySelector(".dots") as HTMLElement
-const progressBar = document.querySelector(".dots .progress") as HTMLElement
-const progressionPercentage = document.querySelector(".dots .percent") as HTMLElement
-const closeCardBackground = document.querySelector("#closeCardBackground") as HTMLElement;
+const carouselContainer = document.querySelector(".workContainer__container") as HTMLElement
+const dotsContainer = document.querySelector(".workContainer__dots") as HTMLElement
+const progressBar = document.querySelector(".workContainer__dots .workContainer__progress") as HTMLElement
+const progressionPercentage = document.querySelector(".workContainer__dots .workContainer__percent") as HTMLElement
+const closeCardBackground = document.querySelector("#workContainer__closeCardBackground") as HTMLElement;
 
 
 
@@ -90,7 +90,7 @@ getData()
   function cardClickHandler(event: Event) {
     const slide = event.currentTarget as HTMLElement;
     const cardSelector = ".mobileCard";
-    const closeCardBackground = document.getElementById("closeCardBackground");
+    const closeCardBackground = document.getElementById("workContainer__closeCardBackground");
     
     if (!slide || !closeCardBackground) {
       return; // Break the function

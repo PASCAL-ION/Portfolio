@@ -1,0 +1,30 @@
+.homeContainer{
+    &__presentationText {
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        gap: 5%;
+        position: absolute;
+        top: 50%;
+        left: 5%;
+        transform: translateY(-50%);
+    }
+    &__title{
+        color: white;
+        font-size: 40px;
+    }
+    &__text{
+        color: white;
+        font-size: 16px;
+    }
+
+    &__bgImage{
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        z-index: -1;
+        filter: brightness(.2);
+    }
+}

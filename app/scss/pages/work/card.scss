@@ -1,9 +1,10 @@
-@import "../utilities/media";
-@import "../utilities/key-frames";
+@import "../../utilities/media.scss";
+@import "../../utilities/key-frames.scss";
 
 /* .no-hover{
     pointer-events: none;
 } */
+
 
 .slideOpen{
     position: absolute;
@@ -73,10 +74,6 @@
             }
         }
     }
-
-
-    
-
 }
 
 
@@ -89,6 +86,8 @@
     justify-content: space-between;
     scroll-snap-align: start;
     margin: 0 auto;
+
+
     //card background
     background: rgba(0, 215, 230, 0.867);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
