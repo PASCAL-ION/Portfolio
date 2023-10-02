@@ -10,11 +10,108 @@
     }
 }
 
-/* to{
-    position: absolute;
-    width: 80vw;
-    height: 80vh;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-} */
+@keyframes toColor {
+    to{
+        filter: grayscale(0%);
+    }
+}
+
+//slide up/down the contact info on mobile
+@keyframes slideUp {
+    to{
+        height: 400px;
+    }
+}
+@keyframes slideDown {
+    to{
+        bottom: -400px;
+    }
+}
+
+//menu hamurgers animation
+@keyframes line1Animation {
+    0%{
+        top: 0;
+    }
+    50%{
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    70%{
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    100%{
+        top: 50%;
+        transform: rotate(45deg);
+        background: #000;
+    }
+}
+@keyframes line2Animation {
+    to{
+        opacity: 0;
+    }
+}
+@keyframes line3Animation {
+    0%{
+        bottom: 0;
+    }
+    50%{
+        bottom: 50%;
+        transform: translateY(-50%);
+    }
+    70%{
+        bottom: 50%;
+        transform: translateY(-50%);
+    }
+    100%{
+        bottom: 50%;
+        transform: rotate(135deg);
+        background: #000;
+    }
+}
+
+@keyframes line1AnimationReverse {
+    0%{
+        top: 50%;
+        transform: rotate(45deg);
+    }
+    50%{
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    70%{
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    100%{
+        top: 0;
+        background: white;
+    }
+}
+@keyframes line2AnimationReverse {
+    from{
+        opacity: 0s;
+    }
+    to{
+        opacity: 1;
+    }
+}
+@keyframes line3AnimationReverse {
+    0%{
+        bottom: 50%;
+        transform: rotate(135deg);
+    }
+    50%{
+        bottom: 50%;
+        transform: translateY(-50%);
+    }
+    70%{
+        bottom: 50%;
+        transform: translateY(-50%);
+    }
+    100%{
+        bottom: 0;
+        background: white;
+    }
+}

@@ -12,17 +12,17 @@
   <div class="snap-container">
     <section class="home-section snap-scroll-section" id="section1">
       <div class="homeContainer">
-        <select id="language-selector">
-          <option value="en">English</option>
-          <option value="fr">Français</option>
-        </select>
-        <button class="homeContainer__responsiveMenuButton"><img src="./images/menu-bars.png" alt=""></button>
+        <a href="#section1" id="myLogo"><img src="./images/myLogo3.png" alt="logo of website"></a>
+        <button class="homeContainer__menuButton menuClosed">
+          <span class="homeContainer__menuButton__line line1"></span>
+          <span class="homeContainer__menuButton__line line2"></span>
+          <span class="homeContainer__menuButton__line line3"></span>
+        </button>
         <nav class="homeContainer__responsiveNav">
           <ul>
-            <li><a href="">Work</a></li>
-            <li><a href="">About</a></li>
-            <li><a href="">Contact</a></li>
-            <li><a href="">Resume</a></li>
+            <li><a href="#section2">About</a></li>
+            <li><a href="#section3">Work</a></li>
+            <li><a href="#section4">Contact</a></li>
           </ul>
         </nav>
         <div class="homeContainer__presentationText">
@@ -30,59 +30,84 @@
           <p class="homeContainer__text">Lat asptem. Natus dicta voluptas unde dolor at veritatis ut.</p>
         </div>
         <img src="./images/pp.jpg" class="homeContainer__bgImage" alt="profile photo">
+        <div class="blackTransientDiv"></div>
       </div>
     </section>
-    <section class="about-section snap-scroll-section" id="section2">
-      <div class="aboutContainer">
-          <div class="aboutContainer__presentationTextContainer">
-            <h1 class="aboutContainer__title">about me</h1>
-            <p class="aboutContainer__text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam quaerat rerum accusamus sequi cum reprehenderit incidunt officiis, dicta libero quibusdam fugiat voluptatem omnis voluptatibus, eaque quasi vero suscipit. Placeat, assumenda.</p>
-          </div>
-          <div class="aboutContainer__btnsContainer">
-            <button class="aboutContainer__btn aboutContainer__skillsBtn">skills</button>
-            <button class="aboutContainer__btn aboutContainer__familiarityBtn">familiarity</button>
-          </div>
-      </div>
-    </section>
-    <section class="work-section snap-scroll-section" id="section3">
-      <div class="workContainer">
-        <div id="workContainer__closeCardBackground"></div> <!-- only on desktop -->
-      
-      <div class="workContainer__slideshow">
-        <div class="workContainer__container">
-          <!-- Dynamic content injected by ts -->
+    <div class="about-and-work-section-container">
+      <img src="./images/darkBg.jpg" class="about-and-work-section-container__backgroundImage" alt="">
+      <section class="about-section snap-scroll-section" id="section2">
+        <div class="aboutContainer">
+            <div class="aboutContainer__presentationTextContainer">
+              <h1 class="aboutContainer__presentationTextContainer__title">about me</h1>
+              <p class="aboutContainer__presentationTextContainer__text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam quaerat rerum accusamus sequi cum reprehenderit incidunt officiis, dicta libero quibusdam fugiat voluptatem omnis voluptatibus, eaque quasi vero suscipit. Placeat, assumenda.</p>
+            </div>
+            <div class="aboutContainer__skillsContainer">
+              <h2 class="aboutContainer__skillsContainer__title">my toolkit</h2>
+              <ul class="aboutContainer__skillsList">
+                <li class="aboutContainer__skill"><img src="./images/tsIcon.png" alt=""></li>
+                <li class="aboutContainer__skill"><img src="./images/nodejsIcon.png" alt=""></li>
+                <li class="aboutContainer__skill"><img src="./images/reactIcon.png" alt=""></li>
+                <li class="aboutContainer__skill"><img src="./images/seoIcon.png" alt=""></li>
+                <li class="aboutContainer__skill"><img src="./images/sassIcon.png" alt=""></li>
+                <li class="aboutContainer__skill"><img src="./images/gulpIcon.png" alt=""></li>
+                <li class="aboutContainer__skill"><img src="./images/apiIcon.png" alt="API CRUD"></li>
+              </ul>
+            </div>
         </div>
+      </section>
+      <section class="work-section snap-scroll-section" id="section3">
+        <div class="workContainer">
+          <h1 class="workContainer__titre">Projets</h1> <!-- only on desktop -->
+          <div id="workContainer__closeCardBackground"></div> <!-- only on desktop -->
+        
+        <div class="workContainer__slideshow">
+          <div class="workContainer__container">
+            <!-- Dynamic content injected by ts -->
+          </div>
+        </div>
+        <ul class="workContainer__dots">
+          <span class="workContainer__progress"></span>
+          <span class="workContainer__percent"></span>
+          <!-- Dynamic content injected by ts -->
+        </ul>
       </div>
-      <ul class="workContainer__dots">
-        <span class="workContainer__progress"></span>
-        <span class="workContainer__percent"></span>
-        <!-- Dynamic content injected by ts -->
-      </ul>
+      </section>
     </div>
-    </section>
     <section class="contact-section snap-scroll-section" id="section4">
       <div class="contactContainer">
         <div class="contactContainer__h1Container">
-          <h1 class="contactContainer__h1">Write Me</h1>
+          <h1 class="contactContainer__h1">Contactez moi !</h1>
         </div>
-        <form class="contactContainer__contact-form" action="">
+        <form class="contactContainer__contact-form" action="https://formsubmit.co/ionpascal26@gmail.com" method="POST">
           <div class="contactContainer__input-group">
-            <input type="text" id="name" name="name" placeholder=" ">
-            <label for="name" class="contactContainer__label contactContainer__fullNameLabel">Full Name</label>
+            <input type="text" id="name" name="name" placeholder=" " required>
+            <label for="name" class="contactContainer__label contactContainer__fullNameLabel">Nom complet</label>
           </div>
           <div class="contactContainer__input-group">
-            <input type="email" id="email" name="email" placeholder=" ">
+            <input type="email" id="email" name="email" placeholder=" " required>
             <label for="email" class="contactContainer__label contactContainer__emailLabel">Email</label>
           </div>
           <div class="contactContainer__input-group">
-            <input type="text" id="subject" name="subject" placeholder=" ">
-            <label for="subject" class="contactContainer__label contactContainer__subjectLabel">Subject</label>
+            <input type="text" id="subject" name="subject" placeholder=" " required>
+            <label for="subject" class="contactContainer__label contactContainer__subjectLabel">Sujet</label>
           </div>
           <div class="contactContainer__input-group">
-            <textarea name="message" id="message" cols="30" rows="10" placeholder=" "></textarea>
+            <textarea name="message" id="message" cols="30" rows="10" placeholder=" " required></textarea>
             <label for="message" class="contactContainer__label contactContainer__messageLabel">Message</label>
           </div>
+          <button type="submit" id="submitFormButton">Envoyer</button>
         </form>
+        <div class="contactContainer__contactInformations">
+          <button class="contactContainer__contactInformationsButton">&#x25B2;</button>
+          <h1 class="contactContainer__contactInformationsH1">Informations de contact</h1>
+          <ul class="contactContainer__informationsList">
+            <li class="contactContainer__informationsList__phoneNumber information">07 53 87 34 48</li><hr>
+            <li class="contactContainer__informationsList__email information">ionpascal26@gmail.com</li><hr>
+            <li class="contactContainer__informationsList__linkedin information"><img src="./images/linkedinIcon.png" alt=""></li><hr>
+            <li class="contactContainer__informationsList__github information"><img src="./images/github-logo.svg" alt=""></li>
+          </ul>
+        </div>
+        <div class="blackTransientDiv"></div>
       </div>
     </section>
   </div>

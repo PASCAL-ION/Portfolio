@@ -1,0 +1,44 @@
+[
+    {
+        "title" : "Site vitrine",
+        "image" : "./images/Booki.png",
+        "alt" : "seo project image",
+        "text": "During this project I optimized the referencing of an existing website",
+        "githubLink": "test"
+    },
+    {
+        "title" : "SEO optimisation",
+        "image" : "./images/LaPanthere.png",
+        "alt" : "seo project image",
+        "text": "During this project I optimized the referencing of an existing website",
+        "githubLink": "test"
+    },
+    {
+        "title" : "API CRUD",
+        "image" : "./images/Piquante.html",
+        "alt" : "seo project image",
+        "text": "During this project I optimized the referencing of an existing website",
+        "githubLink": "test"
+    },
+    {
+        "title" : "ReactJs",
+        "image" : "./images/Kasa.html",
+        "alt" : "seo project image",
+        "text": "During this project I optimized the referencing of an existing website",
+        "githubLink": "test"
+    },
+    {
+        "title" : "Animations css",
+        "image" : "./images/Ohmyfood.png",
+        "alt" : "seo project image",
+        "text": "During this project I optimized the referencing of an existing website",
+        "githubLink": "test"
+    },
+    {
+        "title" : "Ecommerce JS",
+        "image" : "./images/Kanap.html",
+        "alt" : "seo project image",
+        "text": "During this project I optimized the referencing of an existing website",
+        "githubLink": "test"
+    }
+]

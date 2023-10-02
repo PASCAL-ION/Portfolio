@@ -1,6 +1,4 @@
-// import { languageChange } from './language-change';
-
-const responsiveMenuButton = document.querySelector('.homeContainer__responsiveMenuButton');
+const menuButton = document.querySelector('.homeContainer__menuButton');
 const responsiveNav = document.querySelector(".homeContainer__responsiveNav") as HTMLElement;
 const projectImage = document.querySelector("#image") as HTMLImageElement;
 const projectTitle = document.querySelector("#title") as HTMLElement;
@@ -11,15 +9,40 @@ const dotsContainer = document.querySelector(".workContainer__dots") as HTMLElem
 const progressBar = document.querySelector(".workContainer__dots .workContainer__progress") as HTMLElement
 const progressionPercentage = document.querySelector(".workContainer__dots .workContainer__percent") as HTMLElement
 const closeCardBackground = document.querySelector("#workContainer__closeCardBackground") as HTMLElement;
+const responsiveNavLinks = responsiveNav.querySelectorAll("a")
 
 
+responsiveNavLinks.forEach((link) => {
+  link.addEventListener("click", closeNavOnLinkClick)
+})
 
+function closeNavOnLinkClick(){
+  responsiveNav.classList.remove("open")
+  menuButton.classList.add("menuClosed")
+  menuButton.classList.remove("menuOpen")
+}
 
-const jsonPath = './projectsFR.json'
+//animate button
+menuButton?.addEventListener("click", () => {
+  
+  if(menuButton.classList.contains("menuOpen")){
+    menuButton.classList.remove("menuOpen")
+    menuButton.classList.add("menuClosed")
 
-responsiveMenuButton?.addEventListener('click', () => { // Vérifie que le bouton existe avant d'ajouter l'écouteur d'événement
+  } else if(menuButton.classList.contains("menuClosed")){
+    menuButton.classList.remove("menuClosed")
+    menuButton.classList.add("menuOpen")
+  }
+});
+
+//open the menu
+menuButton?.addEventListener('click', () => {
   responsiveNav.classList.toggle("open")
 });
+
+
+
+const jsonPath = './projects.json'
 
 interface MyData {
   title: string;
@@ -41,7 +64,7 @@ getData()
   data.forEach((project, i) => {
     //create the dom elements
     carouselContainer.innerHTML += ` 
-        <div class="slide">
+        <div class="slide slide${i}">
           <div class="mobileCard" id=${i}>
             <img src=${project.image} alt=${project.alt} id="image">
             <div class="projectSummary">
@@ -59,6 +82,7 @@ getData()
   const slides = document.querySelectorAll(".slide") as NodeListOf<HTMLElement>
   const slideWidth = slide.offsetWidth
   const carouselWidth: number = slides.length * slideWidth;
+
 
   
   window.addEventListener("resize", handleScreenSize); //call the function on screen resizing
@@ -120,7 +144,6 @@ getData()
     closeCardBackground.addEventListener("click", closeCard);
   }else{
     console.log("closeCardBackground not found");
-    
   }
   
 function closeCard() {
@@ -138,15 +161,6 @@ function closeCard() {
   document.body.style.overflow = "scroll"; // Allow the page scroll
 }
 
-
-
-
-
-
-
-
-
-
   slides.forEach((slide, index) => {
     const dot = document.createElement('li');
     dot.classList.add('dot');
@@ -158,14 +172,9 @@ function closeCard() {
     });
   });
 
-  //modify the way of animating the points to be able to change the slides
-  //remove the class "activeStep" if the dot is not actually clicked but keep the color of the dot 
   
   const allDots = document.querySelectorAll(".dot")
   function progress(dotId: number){    
-    /* let p = dotId * 25
-    progressionPercentage.style.width = `${p}%`; */
-
     allDots.forEach(element => {
       const elementId = parseInt(element.id)
       if(elementId === dotId){
@@ -184,21 +193,16 @@ function closeCard() {
       }
     });
   }
-
+  
   function changeSlide(dotId: number){
     carouselContainer.scrollTo({
-      left: 375 * dotId, // Position horizontale souhaitée
-      behavior: 'smooth' // Animation fluide du défilement
+      left: (375 + 50) * dotId, // 50 is the gap between slides
+      behavior: 'smooth'
     });
-
   }
   carouselContainer.addEventListener('scroll', () => {
     const scrollLeft = carouselContainer.scrollLeft;
-    // console.log("ScrollLeft : ", scrollLeft);
-    
-    const slideWidth = carouselContainer.clientWidth;
     const currentSlideIndex = Math.round(scrollLeft / slideWidth);
-    
     updateProgress(currentSlideIndex);
   });
   
@@ -208,9 +212,7 @@ function closeCard() {
       dot.classList.toggle("completed", index < currentSlideIndex);
     });
     const progressWidth = (currentSlideIndex +1) * slideWidth;
-    // console.log("progressWidth : ", progressWidth);
     progressionPercentage.style.width = `${(progressWidth / carouselWidth) * 100}%`;
-    // console.log("progressionPercentage : ", progressionPercentage.style.width = `${(progressWidth / carouselWidth) * 100}%`);
   }
 } 
 
@@ -218,4 +220,3 @@ function closeCard() {
 ).catch(err => console.log(err))
 
 
-// export {getData};

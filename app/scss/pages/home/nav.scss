@@ -1,4 +1,5 @@
 @import "../../utilities/media";
+@import "../../utilities/key-frames";
 
 //classe pour gerer l'ouverture du menu sur mobile
 .open{
@@ -7,19 +8,19 @@
 .homeContainer{
     height: 100vh;
     width: 100vw;
-    position: relative;
 
     &__responsiveNav{
         height: 100vh;
         width: 100%;
-        position: absolute;
+        position: fixed;
         display: flex;
         align-items: center;
         justify-content: center;
-        background: #ffffffd3;
+        background: #cfcfcfea;
         transform: translateX(-100%);
-        transition: transform .5s;
-    
+        transition: transform .4s cubic-bezier(.47,1.64,0,.8);
+        z-index: 4;
+
         @include respond(desktop){
             transform: translateX(0);
             align-items: flex-start;
@@ -76,23 +77,72 @@
     
     //Button menu hamburger
     
-    &__responsiveMenuButton{
-        position: absolute;
+    &__menuButton{
+        position: fixed;
         right: 10px;
         top: 10px;
-        background: #00000000;
-        z-index: 1;
+        width: 40px;
+        height: 30px;
+        z-index: 5;
+        background: transparent;
+        // border: 1px solid white;
+
+        &__line{
+            position: absolute;
+            left: 0;
+            height: 2px;
+            width: 100%;
+            background: rgb(255, 255, 255);
+            animation-duration: .3s;
+            animation-timing-function: ease;
+            animation-fill-mode: forwards;
+        }
+
+        .line1{
+            top: 0;
+        }
+        .line2{
+            top: 50%;
+            left: 9px;
+            transform: translateY(-50%);
+            width: 30px;
+        }
+        .line3{
+            bottom: 0;
+        }
+
+        &.menuOpen {
+            .line1 {
+              animation-name: line1Animation;
+            }
+        
+            .line2 {
+                animation-name: line2Animation;
+            }
+        
+            .line3 {
+                animation-name: line3Animation;
+            }
+        }
+
+        &.menuClosed {
+            .line1 {
+              animation-name: line1AnimationReverse;
+            }
+        
+            .line2 {
+                animation-name: line2AnimationReverse;
+            }
+        
+            .line3 {
+                animation-name: line3AnimationReverse;
+            }
+        }
+        
+
     
         @include respond(desktop){
             display: none;
-        }
-    
-    
-        i{
-            &::before{
-                color: azure;
-                font-size: 4rem;
-            }
         }
     }
 }

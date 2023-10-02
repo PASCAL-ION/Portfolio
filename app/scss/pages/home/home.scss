@@ -1,4 +1,24 @@
 .homeContainer{
+    z-index: 2;
+    position: relative;
+
+    #myLogo{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+        img{
+            position: fixed;
+            left: 6px;
+            top: 6px;
+            width: 35px;
+            border: 2px solid whitesmoke;
+            background: #0000005a;
+            padding: 5px;
+            border-radius: 50px;
+        }
+    }
+
     &__presentationText {
         display: grid;
         grid-template-rows: 1fr 1fr;
@@ -26,5 +46,17 @@
         object-fit: cover;
         z-index: -1;
         filter: brightness(.2);
+
+    }
+
+    .blackTransientDiv{
+        background: linear-gradient(rgba(0, 0, 0, 0.01), rgb(0, 0, 0), rgba(0, 0, 0, 0.01));
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 200px;
+        transform: translateY(50%);
+        z-index: -5;
     }
 }
