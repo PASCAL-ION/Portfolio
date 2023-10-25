@@ -1,45 +1,39 @@
-const menuButton = document.querySelector('.homeContainer__menuButton');
-const responsiveNav = document.querySelector(".homeContainer__responsiveNav") as HTMLElement;
-const projectImage = document.querySelector("#image") as HTMLImageElement;
-const projectTitle = document.querySelector("#title") as HTMLElement;
-const projectText = document.querySelector("#text") as HTMLElement;
-const projectGithubLink = document.querySelector("#githubLink") as HTMLElement;
 const carouselContainer = document.querySelector(".workContainer__container") as HTMLElement
 const dotsContainer = document.querySelector(".workContainer__dots") as HTMLElement
-const progressBar = document.querySelector(".workContainer__dots .workContainer__progress") as HTMLElement
-const progressionPercentage = document.querySelector(".workContainer__dots .workContainer__percent") as HTMLElement
 const closeCardBackground = document.querySelector("#workContainer__closeCardBackground") as HTMLElement;
+const menuButton = document.querySelector('.homeContainer__menuButton') as HTMLElement;
+const responsiveNav = document.querySelector(".homeContainer__responsiveNav") as HTMLElement;
 const responsiveNavLinks = responsiveNav.querySelectorAll("a")
 
-
-responsiveNavLinks.forEach((link) => {
-  link.addEventListener("click", closeNavOnLinkClick)
-})
-
-function closeNavOnLinkClick(){
-  responsiveNav.classList.remove("open")
-  menuButton.classList.add("menuClosed")
-  menuButton.classList.remove("menuOpen")
-}
-
-//animate button
-menuButton?.addEventListener("click", () => {
-  
-  if(menuButton.classList.contains("menuOpen")){
-    menuButton.classList.remove("menuOpen")
-    menuButton.classList.add("menuClosed")
-
-  } else if(menuButton.classList.contains("menuClosed")){
-    menuButton.classList.remove("menuClosed")
-    menuButton.classList.add("menuOpen")
-  }
-});
-
-//open the menu
-menuButton?.addEventListener('click', () => {
-  responsiveNav.classList.toggle("open")
-});
-
+/* -------------------------------NAV-------------------------------- */    
+    responsiveNavLinks.forEach((link) => {
+        link.addEventListener("click", closeNavOnLinkClick)
+      })
+      
+      function closeNavOnLinkClick(){
+        responsiveNav.classList.remove("open")
+        menuButton.classList.add("menuClosed")
+        menuButton.classList.remove("menuOpen")
+      }
+      
+      //animate button
+      menuButton?.addEventListener("click", () => {
+        
+        if(menuButton.classList.contains("menuOpen")){
+          menuButton.classList.remove("menuOpen")
+          menuButton.classList.add("menuClosed")
+      
+        } else if(menuButton.classList.contains("menuClosed")){
+          menuButton.classList.remove("menuClosed")
+          menuButton.classList.add("menuOpen")
+        }
+      });
+      
+      //open the menu
+      menuButton?.addEventListener('click', () => {
+        responsiveNav.classList.toggle("open")
+      });
+/* -------------------------------NAV END-------------------------------- */    
 
 
 const jsonPath = './projects.json'
@@ -64,159 +58,214 @@ getData()
   data.forEach((project, i) => {
     //create the dom elements
     carouselContainer.innerHTML += ` 
-        <div class="slide slide${i}">
-          <div class="mobileCard" id=${i}>
-            <img src=${project.image} alt=${project.alt} id="image">
-            <div class="projectSummary">
-              <h1 id="title" class="translatable">${project.title}</h1>
-              <p id="text" class="translatable">${project.text}</p>
-              <div id="githubLink">
-                <img src="../images/github-logo.png" alt="">
-                <a href="https://www.google.fr/" class="translatable">Github repository</a>
-              </div>
-            </div>
+      <div class="card card${i}" id=${i}>
+        
+        <div class="" id=${i}>
+          <div class="imgAndTitle">
+          <div style="background: url('${project.image}'); background-repeat: no-repeat; background-size: contain; background-position: center; position: absolute; left: 0; top: 0; width: 100%; height: 100%; border-radius: 10px;" class="img"></div>
+            <h3 id="title" class="">${project.title}</h3>
           </div>
-        </div>`;
+          <div class="projectSummary">
+            <p id="text" class="">${project.text}</p>
+          </div>
+          <div id="githubLink">
+              <img src="../images/github-logo.webp" alt="icone github">
+              <a href="${project.githubLink}" target="_blank">Repo Github</a>
+            </div>
+        </div>
+      </div>`;
+      console.log(project.image);
+      
   })
-  const slide = document.querySelector(".slide") as HTMLElement //select just one slide and use its width to calculate the carousel width (all slides have the same width)
-  const slides = document.querySelectorAll(".slide") as NodeListOf<HTMLElement>
-  const slideWidth = slide.offsetWidth
-  const carouselWidth: number = slides.length * slideWidth;
+  
+  /* -------------------------------CAROUSEL SCRIP-------------------------------- */    
 
+  let cardWidth: number
+  const cards = document.querySelectorAll(".card") as NodeListOf<HTMLElement>
+
+  function cardWidthUpdate() {
+    cardWidth = window.innerWidth
+    useCardWidth()
+  }
+  cardWidthUpdate(); // Call cardWidthUpdate initially to set the initial value
+  
+  window.addEventListener("resize", cardWidthUpdate); //call the function on screen resizing
+  
+  function useCardWidth() {
+    return cardWidth
+  }
+
+  //create a dot for each card and set the dot id with the card index
+cards.forEach((card, cardIndex) => {
+  const dot = document.createElement('li');
+  dot.classList.add('dot');
+  dotsContainer.appendChild(dot);
+  dot.setAttribute('id', `${cardIndex}`)
+
+  dot.addEventListener('click', () => { 
+    progress(cardIndex)
+  });
+});
+
+
+const firstDot = dotsContainer.firstElementChild
+firstDot.className = "dot activeDot"
+
+
+  const allDots = document.querySelectorAll(".dot")
+  //on dot clicking change slide by comparing dot id and slide index
+  function progress(cardIndex: number){
+    let shouldExit = false
+    allDots.forEach(dot => {
+      const dotId = parseInt(dot.id)
+
+      if(dotId === cardIndex){
+        dot.classList.add("activeDot")
+        dot.classList.remove("completed")
+        changeCard(cardIndex)
+        shouldExit = true
+      }else if(dotId < cardIndex){
+        dot.classList.add("completed")
+        dot.classList.remove("activeDot")
+      }else if(dotId > cardIndex){
+        dot.classList.remove("activeDot")
+        dot.classList.remove("completed")
+      }
+    });
+
+    if (shouldExit) {
+      return; // Exit the function if the flag is set
+    }
+  }
+  
+  function changeCard(dotId: number){
+    carouselContainer.scrollTo({
+      left: (useCardWidth() + 50) * dotId, // 50 is the gap between cards
+      behavior: 'smooth'
+    });
+  }
 
   
+  
+  function isCardInViewport(el: HTMLElement): boolean {
+    const rect = el.getBoundingClientRect();
+    
+    return (
+        // rect.top >= 0 &&
+        rect.left >= 0 &&
+        // rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+}
+
+// Function to get the id of the visible card
+function getIdOfVisibleCard(): void {
+    const allCards = document.getElementsByClassName('mobileCard');
+    
+    for (let i = 0; i < allCards.length; i++) {
+        const currentCard = allCards[i] as HTMLElement;
+        if (isCardInViewport(currentCard)) {
+          uptadeDots(currentCard)
+    }
+}
+}
+
+function uptadeDots(currentCard: HTMLElement){
+  allDots.forEach(dot => {
+    if(dot.id === currentCard.id){
+      dot.classList.add("activeDot")
+      dot.classList.remove("completed")  
+    }else if(dot.id < currentCard.id){
+      dot.classList.add("completed")
+      dot.classList.remove("activeDot")
+    }else if(dot.id > currentCard.id){
+      dot.classList.remove("activeDot")
+      dot.classList.remove("completed")
+    }
+  })
+}
+
+carouselContainer.addEventListener('scroll', getIdOfVisibleCard)
+  
+
+/* -------------------------------CAROUSEL SCRIP END-------------------------------- */
+
+/* -------------------------------MOBILE/DESKTOP CARD-------------------------------- */
+
+  const closeCardBackground = document.getElementById("workContainer__closeCardBackground");
+  closeCardBackground.style.display = "none";
+
+
   window.addEventListener("resize", handleScreenSize); //call the function on screen resizing
   window.addEventListener("load", handleScreenSize); //call the function on page load
 
   function handleScreenSize(){
     const windowWidth = window.innerWidth;
-
-    if(windowWidth > 768){
-      addClickHandlerToCard()
-    } else if (windowWidth < 768) {
-      removeClickHandlerFromCard()
+    if(windowWidth > 781){
+      desktopCardScript()
+    } else if (windowWidth < 780) {
+      mobileCardScript()
       return
     }
   }
 
-  function addClickHandlerToCard(){
-    slides.forEach((slide) => {
-      slide.addEventListener("click", cardClickHandler);
+  function desktopCardScript(){
+    cards.forEach(( card) => {
+      card.addEventListener("click", cardClickHandler);
+      card.className = "closedCard"
+      card.querySelector("div:first-child").className = "closedCard"
     });
   }
 
-  function removeClickHandlerFromCard(){
-    slides.forEach((slide) => {
-      slide.removeEventListener("click", cardClickHandler);
+  function mobileCardScript(){
+    cards.forEach((card) => {
+      card.removeEventListener("click", cardClickHandler);
+      card.querySelector("div:first-child").className = "mobileCardLayout"
+      card.className = "mobileCard"
+      toogleShadow(card) 
     });
+  }
+
+  function toogleShadow(card: HTMLElement){
+    const text = card.querySelector(".mobileCardLayout .projectSummary #text") as HTMLElement
+    if(text.scrollHeight > text.clientHeight){
+      text.style.boxShadow = "inset 0px -20px 10px 0px rgba(0, 0, 0, 0.3)"
+      console.log(text.scrollHeight);
+      
+    } else  {
+      text.style.boxShadow = "none"
+    }
+     
   }
 
   function cardClickHandler(event: Event) {
-    const slide = event.currentTarget as HTMLElement;
-    const cardSelector = ".mobileCard";
-    const closeCardBackground = document.getElementById("workContainer__closeCardBackground");
-    
-    if (!slide || !closeCardBackground) {
+    const card = event.currentTarget as HTMLElement;
+    card.className = "openCardByAnimating"
+    const openedCardLayoutWrapper = card.querySelector("div:first-child") as HTMLElement;
+    document.body.style.overflow = 'hidden'
+
+    if (!card || !closeCardBackground) {
+      console.log("!card || !closeCardBackground");
       return; // Break the function
+    } else {
+      openedCardLayoutWrapper.className = "desktopCardLayout"
+      closeCardBackground.style.display = "block" 
+      closeCardBackground.addEventListener("click", () => {
+        closeCardBackgroundClickHandler(card)
+        openedCardLayoutWrapper.className = "closedCard"
+      })
     }
-  
-    document.body.style.overflow = "hidden";
-    closeCardBackground.style.display = "block";
-  
-    function slideOpenAndTransformToDesktop() {
-      slide.classList.add("slideOpen");
-      const card = slide.querySelector(cardSelector) as HTMLElement;
-      if (card) {
-        card.classList.add("desktopCard");
-      }
-    }
-    function removeHoverEffect() {
-      const card = slide.querySelector(cardSelector) as HTMLElement;
-      if (card) {
-        card.classList.remove("mobileCard");
-      }
-    }
-    slideOpenAndTransformToDesktop();
-    removeHoverEffect();
   }
 
-  if(closeCardBackground){
-    closeCardBackground.addEventListener("click", closeCard);
-  }else{
-    console.log("closeCardBackground not found");
+  function closeCardBackgroundClickHandler(openedCardLayoutWrapper: HTMLElement){
+    openedCardLayoutWrapper.className = "closedCard"
+    closeCardBackground.style.display = "none"
+    document.body.style.overflow = 'auto'
   }
-  
-function closeCard() {
-  const actuelOpenCard = document.querySelector(".slideOpen") as HTMLElement;
-
-  if(actuelOpenCard){
-    const cardContent = actuelOpenCard.querySelector("div:first-child") as HTMLElement;
-
-    actuelOpenCard.classList.remove("slideOpen");
-    cardContent.classList.remove("desktopCard");
-    cardContent.classList.add("mobileCard");
-  }
-  
-  closeCardBackground.style.display = "none";
-  document.body.style.overflow = "scroll"; // Allow the page scroll
 }
-
-  slides.forEach((slide, index) => {
-    const dot = document.createElement('li');
-    dot.classList.add('dot');
-    dotsContainer.appendChild(dot);
-    dot.setAttribute('id', `${index}`)
-    
-    dot.addEventListener('click', () => { 
-      progress(index)
-    });
-  });
-
-  
-  const allDots = document.querySelectorAll(".dot")
-  function progress(dotId: number){    
-    allDots.forEach(element => {
-      const elementId = parseInt(element.id)
-      if(elementId === dotId){
-        element.classList.add("activeStep")
-        element.classList.remove("completed")
-        changeSlide(dotId)
-      }
-      if(elementId < dotId){
-        element.classList.add("completed")
-        element.classList.remove("activeStep")
-
-      }
-      if(elementId > dotId){
-        element.classList.remove("activeStep")
-        element.classList.remove("completed")
-      }
-    });
-  }
-  
-  function changeSlide(dotId: number){
-    carouselContainer.scrollTo({
-      left: (375 + 50) * dotId, // 50 is the gap between slides
-      behavior: 'smooth'
-    });
-  }
-  carouselContainer.addEventListener('scroll', () => {
-    const scrollLeft = carouselContainer.scrollLeft;
-    const currentSlideIndex = Math.round(scrollLeft / slideWidth);
-    updateProgress(currentSlideIndex);
-  });
-  
-  function updateProgress(currentSlideIndex: number) {
-    allDots.forEach((dot, index) => {
-      dot.classList.toggle("activeStep", index === currentSlideIndex);
-      dot.classList.toggle("completed", index < currentSlideIndex);
-    });
-    const progressWidth = (currentSlideIndex +1) * slideWidth;
-    progressionPercentage.style.width = `${(progressWidth / carouselWidth) * 100}%`;
-  }
-} 
-
-
 ).catch(err => console.log(err))
 
-
+const loader = document.querySelector('.loaderContainer') as HTMLElement;
+window.addEventListener("load", () => {
+  loader.style.display = "none"
+})

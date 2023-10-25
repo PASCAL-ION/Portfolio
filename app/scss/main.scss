@@ -1,12 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Italiana&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Trykker&display=swap');
+
 //*************************** Base ********************************
 @import "./base/reset";
-@import "./base/sections.scss";
-
-//*************************** Components ********************************
-@import "./components/language-selector";
+@import "./base/fontSettings.scss";
 
 //*************************** Features ********************************
 @import "./features/snap-scroll.scss";
+@import "./features/preloader.scss";
 
 //*************************** Pages ********************************
 //Home
@@ -17,7 +19,8 @@
 @import "./pages/about.scss"; 
 
 //work
-@import "./pages/work/card.scss";
+@import "./pages/work/mobileCard.scss";
+@import "./pages/work/desktopCard.scss";
 @import "./pages/work/carousel.scss";
 
 //contact

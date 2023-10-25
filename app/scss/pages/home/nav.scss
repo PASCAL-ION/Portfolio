@@ -1,5 +1,7 @@
 @import "../../utilities/media";
 @import "../../utilities/key-frames";
+@import "../../base/color";
+@import "../../base/reset.scss";
 
 //classe pour gerer l'ouverture du menu sur mobile
 .open{
@@ -22,9 +24,20 @@
         z-index: 4;
 
         @include respond(desktop){
+            height: 45px;
+            background: linear-gradient(90deg,rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.66) 50%, rgba(0, 0, 0, 0));
+            margin-top: 0px;
             transform: translateX(0);
-            align-items: flex-start;
-            background: #00000000;
+
+            &::after{
+                content: "";
+                position: absolute;
+                bottom: 0;
+                height: 1px;
+                background: linear-gradient(90deg,rgba(236, 9, 9, 0), rgb(255, 255, 255) 50%, rgba(255, 255, 255, 0)) ;
+                width: 50%;
+                margin: 0 auto;
+            }
         }
     
         ul{
@@ -42,15 +55,14 @@
             
             li{
                 a{
-                    @include respond(desktop){
-                        color: rgb(201, 201, 201);
-                    }
-                    font-size: clamp(14px, 3vh, 40px);
                     position: relative;
                     //center horizontally the after element 
                     display: flex;
                     justify-content: center;
-    
+
+                    @include respond(desktop){
+                        color: $lightestBlue;
+                    }
                     &::after{
                         content: "";
                         display: block;
@@ -61,11 +73,12 @@
                         z-index: -1;
                         width: 115%;
                         height: 0;
-                        background: linear-gradient(to right, #283c86, #45a247);/* linear-gradient(to right, #000000, #0f9b0f) */
+                        background: $lightestBlue;
                         transition: height .5s;
                     }
     
                     &:hover{
+                        color: $darkestBlue;
                         &::after{
                             height: 100%;
                         }

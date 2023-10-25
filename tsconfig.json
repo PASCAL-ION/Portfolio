@@ -1,8 +1,0 @@
-/* {
-  "compilerOptions": {
-    "lib": ["esnext", "dom"],
-    "strict": true,
-    "moduleResolution": "node"
-  },
-  "extends": "@tsconfig/esm/tsconfig.json"
-} */

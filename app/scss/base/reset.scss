@@ -1,0 +1,30 @@
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    text-decoration: none;
+    color: black;
+  }
+  * {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    max-width: 2000px;
+    margin: 0 auto;
+  }
+  //  
+  input, button, textarea, select {
+    font: inherit;
+    border: none;
+  }
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+    font-weight: normal;
+  }
+  
+  html{
+    scroll-behavior: smooth;
+  }

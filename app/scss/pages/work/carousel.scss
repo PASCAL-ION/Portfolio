@@ -21,99 +21,136 @@
     transform: translate(-50%, -50%);
     width: 100vw;
     height: 100vh;
-    background: #c1c1c1a8;
+    background: #ffffff4c;
     z-index: 1;
 
     &:hover{
         cursor: pointer;
     }
+
+    img{
+        display: none;
+
+        @include respond(desktop){
+            display: block;
+            // border: 1px solid red;
+            position: absolute;
+            top: 6%;
+            right: 8%;
+            width: 30px;
+            padding: 5px;
+            z-index: 999999999999999;
+            border: 1px solid black;
+            border-radius: 50%;
+        }
+    }
 }
+
+#closeCardButton{
+    display: none;
+}
+
 .workContainer{
     width: 100%;
-    height: 100%;
+    height: 100vh;
     position: relative;
     display: flex;
-    align-items: flex-end;
-
+    align-items: center;
+    margin-top: 150px;
+    margin-bottom: 20px;
+    // border: 1px solid red;
+    
     &__titre{
         position: absolute;
-        top: 50px;
+        top: -70px;
         left: 0;
-        font-size: 50px;
         color: white;
         width: 100%;
-        margin-top: 0px;
         text-align: center;
 
         @include respond(desktop){
+            top: 8%;
         }
     }
 
     &__slideshow{
-        height: 80%;
+        height: 100%;
         width: 100%;
+        display: flex;
+        align-items: center;
+        // border: 1px solid yellow;
+
+
 
         @include respond(desktop){
+            height: 100%;
             display: flex;
-            align-items: center;
+            align-items: end;
             justify-content: center;
+            justify-items: center;
+            overflow-y: scroll;
+            margin-bottom: 30px;
         }
     }
 
     &__container{
-        height: 100%;
+        height: 100vh;
         overflow-x: scroll;
+        overflow-y: hidden;
         scroll-snap-type: x mandatory;
         display: flex;
         align-items: flex-end;
-        gap: 50px;
-
+        gap: 0 50px ;
+        // border: 1px solid green;
+        
         @include respond(desktop){
             display: grid;
-            justify-items: center;
-            align-items: center;
-            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-columns: repeat(auto-fill, 300px);
             grid-template-rows: 1fr 1fr;
+            justify-items: center;
+            justify-content: center;
+            // align-items: center;
+            padding: 15px;
+            max-width: 1050px;
             width: 80%;
-            height: 70%;
-            // gap: 10px;
-        }
+            height: 75%;
+            overflow: auto;
+            overflow-y: scroll;
+            gap: 50px;
 
-        .slide{
-            height: 100%;
-            width: 100vw;
-            transition: all 0.5 ease;
-            margin: 0 auto;
-            
-            @include respond(desktop){
-                max-width: 400px;
+            &::-webkit-scrollbar{
+                background-color: rgba(255, 255, 255, 0);
+                width: 5px;
+            }
+            &::-webkit-scrollbar-thumb{
                 width: 100%;
-                height: 250px;
+                background-color: rgba(90, 90, 90, 0.57);
+                border-radius: 6px;
             }
         }
 
-        .slide0{
+        .card0{
             grid-area: 1 / 1 / 2 / 2;
         }
-        .slide1{
+        .card1{
             grid-area: 1 / 2 / 2 / 3;
         }
-        .slide2{
+        .card2{
             grid-area: 1 / 3 / 2 / 4;
         }
-        .slide3{
+        .card3{
             grid-area: 2 / 1 / 3 / 2;
         }
-        .slide4{
+        .card4{
             grid-area: 2 / 2 / 3 / 3;
         }
-        .slide5{
+        .card5{
             grid-area: 2 / 3 / 3 / 4;
         }
     }
     &__dots{
         position: absolute;
-        top: 90%;
+        bottom: 8%;
         left: 50%;
         transform: translateX(-50%);
         display: flex;
@@ -122,21 +159,11 @@
         @include respond(desktop){
             display: none;
         }
-    
-        .line{
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            height: 2px;
-            width: 100%;
-            background: rgb(255, 255, 255);
-        }
-        
         .dot{
             background: rgb(255, 255, 255);
-            border: 2px solid gray;
-            width: 15px;
-            height: 15px;
+            border: 2px solid rgba(104, 104, 104, 0.692);
+            width: 18px;
+            height: 18px;
             border-radius: 50%;
             margin: 2px 0;
             z-index: 2;
@@ -150,30 +177,18 @@
                 cursor: pointer;
             }
     
-            &.activeStep, &.completed{
-                background: #e1ff00;
-                border: 2px solid rgb(0, 0, 0);
-                // animation: fill;
-                transition: border .5s;
+            &.activeDot{
+                background: #0044ff;
+                border: 2px solid rgba(0, 0, 0, 0.692);
+                transition: all .5s;
+            }
+            &.completed{
+                background: #00aeff;
+                border: none;
+                border: 2px solid rgba(104, 104, 104, 0.692);
+                transition: all .5s;
             }
         }
-    }
-    &__progress{
-        background: gray;
-        width: 100%;
-        height: 2px;
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-    }
-    &__percent{
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        background: rgb(0, 0, 0);
-        width: 0;
-        height: 2px;
-        transition: width .5s;
     }
 }
 
