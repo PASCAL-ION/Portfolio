@@ -128,8 +128,13 @@
         height: 100%;
         width: 100%;
 
+        @include respond(desktop){
+            gap: 50px;
+        }
+
         &__title{
             color: white;
+            text-align: center;
         }
     }
 }
