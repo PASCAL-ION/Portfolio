@@ -1,0 +1,117 @@
+@import "../../base/color.scss";
+
+.workContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 50px;
+    width: 100vw;
+    gap: 100px;
+
+    &__title{
+        width: 100%;
+        text-align: center;
+    }
+
+    &__projectsContainer{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-width: 930px;
+        gap: 100px;
+        padding: 0 15px;
+        flex-wrap: wrap;
+    }
+
+    &__card{
+        background: #082C36;
+        width: clamp(350px, 80%, 400px);
+        height: 650px;
+        border-radius: 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        // gap: 30px;
+        padding: 5px 10px;
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.451);
+
+        &:hover{
+            background: #003848;
+            box-shadow: 0 0 10px rgb(255, 255, 255);
+        }
+
+        &__imageContainer{
+            width: 100%;
+            height: 200px;
+
+            &__image{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                background: white;
+                border-radius: 15px;
+            }
+        }
+
+        &__separator{
+            margin: 10px auto 30px auto;
+            width: 80px;
+            border: 2px solid #4CCCE6;
+            border-radius: 10px;
+        }
+
+        &__content{
+            height: 350px;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        &__title{
+            width: 100%;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        &__footer{
+            height: 50px;
+            width: 100%;
+            margin-top: 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        &__techsContainer{
+            display: flex;
+            justify-content: start;
+            margin-top: 20px;
+            gap: 10px;
+        }
+
+        &__tech{
+            background: #23b0d084;
+            color: $height-contrast-text;
+            border: white;
+            border-radius: 10px;
+            padding: 2px;
+            // font-size: 1rem;
+        }
+
+        &__projectLinksContainer{
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 10px;
+        }
+
+        &__link{
+            a{
+                i{
+                    color: white;
+                }
+            }
+        }
+    }
+}

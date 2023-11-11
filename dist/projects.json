@@ -1,44 +1,38 @@
 [
     {
-        "title" : "Site vitrine",
-        "image" : "../images/Booki.webp",
-        "alt" : "Image projet Booki",
-        "text": "Le projet du site Booki a pour objectif de donner aux utilisateurs la possibilité de rechercher des hébergements dans une ville de leur choix. Dans le cadre de cette réalisation, mon rôle de développeur consistait à adapter une version de la maquette pour trois interfaces fournies sur Figma: desktop, tablette et mobile. Les contraintes techniques qui m’étaient imposées : pas de framework, pas de préprocesseur, mise en page avec flex-box, m'ont offert la possibilité de revisiter mes acquis en HTML et CSS basiques",
-        "githubLink": "https://github.com/PASCAL-ION/Booki"
-    },
-    {
         "title" : "Optimisation SEO",
         "image" : "../images/LaPanthere.webp",
         "alt" : "Image projet La Panthère",
-        "text": "Dans cette mission, mon objectif était d'optimiser le référencement naturel (SEO) du site web La Panthère, qui était déjà actif en ligne. Pour commencer, j'ai minutieusement analysé le site et identifié les sections qui n'étaient pas optimisées. En consignant ces observations dans un tableau clair et concis, j'ai pu élaborer des stratégies précises pour entreprendre les corrections. Une fois les ajustements effectués, j'ai réalisé des tests de comparaison approfondis à l'aide de Lighthouse, un outil puissant intégré à la console. Ces tests ont principalement évalué les performances du site, ainsi que son accessibilité. Leur résultats concluants ont ainsi garanti que chaque modification apportée a contribué de manière significative à l'amélioration globale de l'expérience utilisateur et à l'optimisation du référencement.",
-        "githubLink": "https://github.com/PASCAL-ION/La-Panthere"
+        "text": "Dans cette mission SEO pour le site La Panthère, j'ai identifié les sections non optimisées, élaboré des stratégies de correction après une analyse détaillée, effectué des ajustements, et réalisé des tests approfondis avec Lighthouse. Les résultats ont confirmé des améliorations significatives, renforçant l'expérience utilisateur et le référencement du site.",
+        "githubLink": "https://github.com/PASCAL-ION/La-Panthere",
+        "websiteLink": "https://pascal-ion.github.io/La-Panthere/",
+        "techStack": ["Lighthouse", "SEO practices"]
     },
     {
         "title" : "API CRUD",
         "image" : "../images/Piquante.webp",
         "alt" : "Image projet Piquante",
-        "text": "Pour ce projet, j'ai conçu une API CRUD pour un site de critiques de sauces piquantes. Cette API permet aux utilisateurs de créer et de supprimer des sauces, tout en leur offrant la possibilité de découvrir les créations des autres utilisateurs. J'ai élaboré un système de création de compte et de connexion. Cela a nécessité des mesures de sécurité robustes afin de protéger les mots de passe stockés dans la base de données. Pour cette sécurisation, j'ai utilisé bcrypt, un outil de hachage de mots de passe qui garantit la sécurité des données sensibles. <br>. J’ai créé un serveur Node.js pour héberger une application Express. Afin de gérer de manière efficace toutes les requêtes entrantes j'ai mis en place différents middlewares. En ce qui concerne le stockage des données, j'ai utilisé MongoDB, en l'associant au package Mongoose pour bénéficier de ses fonctionnalités pratiques et flexibles. L'objectif était de créer une expérience utilisateur fluide et sécurisée tout en garantissant une gestion efficace des données critiques pour le bon fonctionnement du site.",
-        "githubLink": "https://github.com/PASCAL-ION/Piquante"
+        "text": "J'ai créé une API CRUD sécurisée pour un site de critiques de sauces piquantes. Le serveur Node.js avec Express utilise bcrypt pour la sécurité des mots de passe, des middlewares pour gérer les requêtes, et MongoDB avec Mongoose pour stocker les données de manière flexible. L'objectif : une expérience utilisateur fluide et sécurisée avec une gestion efficace des données critiques.",
+        "githubLink": "https://github.com/PASCAL-ION/Piquante",
+        "websiteLink": "",
+        "techStack": ["Node.Js", "MongoDB", "Express", "OWASP"]
     },
     {
         "title" : "ReactJs",
         "image" : "./images/Kasa.webp",
         "alt" : "Image projet Kasa",
-        "text": "Pour ce projet, j'ai créé une API CRUD pour un site de critique de sauces piquantes. L'API permet à l'utilisateur de créer et de supprimer des sauces, ainsi que de voir celles des autres. On peut également créer un compte utilisateur, donc il a fallu sécuriser les mots de passe dans la base de données. Pour ce faire, j'ai utilisé bcrypt qui hache les mots de passe et les stocke dans la base de données. J'ai donc créé un serveur Node qui sert une application Express contenant différents middlewares pour gérer toutes les requêtes. Pour stocker les données, j'ai utilisé MongoDB avec le package mongoose.",
-        "githubLink": "https://github.com/PASCAL-ION/Kasa"
-    },
-    {
-        "title" : "Animations css",
-        "image" : "../images/Ohmyfood.webp",
-        "alt" : "Image projet Ohmyfood",
-        "text": "OhMyFood est un restaurant qui déploie son application de précommande. Cet établissement souhaite se concentrer sur l'ergonomie de son site web pour les écrans de téléphones portables. En suivant un cahier des charges, j’ai travaillé sur l'intégration d'une maquette Figma, en adoptant une approche responsive et mobile-first. J’ai pu également assurer une compatibilité optimale avec les autres appareils (ordinateur et tablette). Pour une expérience client de qualité, j'ai introduit les animations demandées et j'ai également apporté ma touche personnelle en ajoutant un loader lors du chargement des pages.",
-        "githubLink": "https://github.com/PASCAL-ION/Ohmyfood"
+        "text": "Pour ce projet j'ai utilisé React pour intégrer la maquette figma d'une application web dynamique, avec une interface utilisateur interactive et fonctionnelle. L'approche Agile et la gestion d'état avec React assurent une expérience utilisateur fluide. Le Responsive Design garantit une adaptabilité à tous les dispositifs.",
+        "githubLink": "https://github.com/PASCAL-ION/Kasa",
+        "websiteLink": "https://pascal-ion.github.io/Kasa/",
+        "techStack": ["ReactRouter", "Styled Components", "Hooks"]
     },
     {
         "title" : "Ecommerce JS",
         "image" : "../images/Kanap.webp",
         "alt" : "Image projet Kanap",
-        "text": "Dans le cadre du projet Kanap, j'ai été chargé de développer toute la logique nécessaire pour assurer le bon fonctionnement du site. Une fois la partie frontend et backend en place, ma responsabilité était d'implémenter le site de manière dynamique. Pour ce faire, j'ai utilisé la méthode fetch afin de récupérer et d'envoyer des données ; et j'ai créé une structure HTML dynamique qui s'adapte en fonction des produits disponibles sur le backend. J'ai également conçu un script permettant de gérer le panier, ce qui inclut l'ajout, la suppression et la modification des articles. <br> Pendant la réalisation de ce projet, j'ai eu l'occasion de travailler avec le local storage pour coder la logique du panier, assurant ainsi la disponibilité des données à travers les pages du site. Par ailleurs, j'ai mis en place des expressions régulières (regex) pour garantir la sécurité et la validité des données saisies dans les formulaires. Cette approche renforce la fiabilité du processus de commande sur le site, offrant une expérience pour l’utilisateur plus sûre et plus agréable.",
-        "githubLink": "https://github.com/PASCAL-ION/Kanap"
+        "text": "Dans le cadre du projet Kanap, j'ai développé la logique essentielle pour le bon fonctionnement du site, en utilisant la méthode fetch pour la gestion des données. J'ai créé une structure HTML dynamique basée sur les produits disponibles sur le backend. La gestion du panier, incluant l'ajout, la suppression et la modification des articles, a été assurée par un script dédié. J'ai utilisé le local storage pour garantir la disponibilité des données du panier entre les pages du site. De plus, des expressions régulières (regex) ont été mises en place pour assurer la sécurité des données dans les formulaires, renforçant ainsi la fiabilité du processus de commande et offrant une expérience utilisateur plus sûre et agréable.",
+        "githubLink": "https://github.com/PASCAL-ION/Kanap",
+        "websiteLink": "https://pascal-ion.github.io/Kanap/",
+        "techStack": ["test", "test", "test"]
     }
 ]

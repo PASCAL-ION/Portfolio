@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="./css/style.css">
   <title>Pascal Ion Portfolio</title>
 </head>
@@ -11,9 +12,9 @@
   <div class="loaderContainer">
     <div class="loader"><!-- <img src="./images/preloader.gif" alt=""> --></div>
   </div>
-  <img src="./images/bgPortfolio.webp" class="website-backgroundImage" alt="website-backgroundImage">
-    <div class="snap-container">
-      <section class="home-section snap-scroll-section" id="section1">
+  <!-- <img src="./images/bgPortfolio.webp" class="website-backgroundImage" alt="website-backgroundImage"> -->
+    
+      <section class="home-section " id="section1">
         <div class="homeContainer">
           <a href="#section1" id="myLogo"><img src="./images/myLogo.webp" alt="logo of website"></a>
           <button class="homeContainer__menuButton menuClosed">
@@ -39,7 +40,7 @@
           </div>
         </div>
       </section>
-        <section class="about-section snap-scroll-section" id="section2">
+        <section class="about-section " id="section2">
           <div class="aboutContainer">
               <div class="aboutContainer__presentationTextContainer">
                 <h2 class="aboutContainer__presentationTextContainer__title">pourquoi ce portfolio</h2>
@@ -67,21 +68,17 @@
               </div>
           </div>
         </section>
-        <section class="work-section snap-scroll-section" id="section3">
+        <section class="work-section " id="section3">
           <div class="workContainer">
-            <h2 class="workContainer__titre">Projets OpenClassrooms</h2> <!-- only on desktop -->
-            <div id="workContainer__closeCardBackground"><img src="./images/cross.webp" alt=""></div> <!-- only on desktop -->
-            <span id="closeCardButton"><img src="./images/cross.webp" alt=""></span>
-          <div class="workContainer__slideshow">
-            <div class="workContainer__container">
+            <h2 class="workContainer__title">Projets OpenClassrooms</h2> <!-- only on desktop -->
+            <div class="workContainer__projectsContainer">
               <!-- Dynamic content injected by ts -->
             </div>
-          </div>
           <ul class="workContainer__dots">
           </ul>
         </div>
         </section>
-      <section class="contact-section snap-scroll-section" id="section4">
+      <section class="contact-section " id="section4">
         <div class="contactContainer">
           <div class="contactContainer__h1Container">
             <h1 class="contactContainer__h1">Contactez moi !</h1>
@@ -123,7 +120,6 @@
           </div>
         </div>
       </section>
-    </div>
     <script type="module" src="./script/script.js"></script>
 </body>
 </html>

@@ -1,13 +1,18 @@
+@import "../base/color.scss"; 
+
 h1{
     font-family: 'Inconsolata', monospace;
     font-weight: bold;
     letter-spacing: 1px;
     font-size: clamp(1.4rem, 16px + 4vw, 3rem);
+    color: $height-contrast-text;
 }
 h2{
     font-family: 'Italiana', sans-serif;
     letter-spacing: 1px;
-    font-size: clamp(1.5rem, 16px + 4vw, 2.5rem);
+    font-size: clamp(1.5rem, 16px + 4vw, 1.8rem);
+    color: $height-contrast-text;
+
 }
 a{
     font-family: 'Trykker', serif;
@@ -15,7 +20,8 @@ a{
 }
 p{
     font-family: 'Trykker', serif;
-    font-size: clamp(1rem, 16px + 4vw, 1.1rem);
+    font-size: clamp(1rem, 16px + 4vw, 1rem);
+    color: white;
 }
 *{
     letter-spacing: 1px;
