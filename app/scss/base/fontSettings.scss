@@ -1,27 +1,28 @@
 @import "../base/color.scss"; 
 
 h1{
-    font-family: 'Inconsolata', monospace;
-    font-weight: bold;
+    font-family: 'Karla', sans-serif;
+    font-weight: 600;
     letter-spacing: 1px;
     font-size: clamp(1.4rem, 16px + 4vw, 3rem);
     color: $height-contrast-text;
 }
 h2{
-    font-family: 'Italiana', sans-serif;
+    font-family: 'Karla', sans-serif;
+    font-weight: 400;
     letter-spacing: 1px;
     font-size: clamp(1.5rem, 16px + 4vw, 1.8rem);
     color: $height-contrast-text;
 
 }
 a{
-    font-family: 'Trykker', serif;
+    font-family: 'Merriweather', serif;
     font-size: clamp(1rem, 16px + 4vw, 1.3rem);
 }
-p{
-    font-family: 'Trykker', serif;
+p, span, li{
+    font-family: 'Merriweather', serif;
     font-size: clamp(1rem, 16px + 4vw, 1rem);
-    color: white;
+    color: $height-contrast-text;
 }
 *{
     letter-spacing: 1px;

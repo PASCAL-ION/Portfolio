@@ -40,11 +40,9 @@
         }
 
         &__title{
-            color: white;
             text-transform: capitalize;
         }
         &__text{
-            color: white;
             text-align: center;
 
             padding: 0 10px;
@@ -70,7 +68,6 @@
         }
 
         &__title{
-            color: white;
             text-transform: capitalize;
         }
     }
@@ -115,7 +112,7 @@
                 height: auto;
                 text-align: center;
                 font-size: 1rem;
-                color: $lightestBlue;
+                color: $height-contrast-text;
             }
         }
     }
@@ -133,7 +130,6 @@
         }
 
         &__title{
-            color: white;
             text-align: center;
         }
     }

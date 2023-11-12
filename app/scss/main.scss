@@ -1,13 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@300;400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Italiana&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Trykker&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;600&display=swap'); // Karla 
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400&display=swap'); // Merriweather
 
 //*************************** Base ********************************
 @import "./base/reset";
 @import "./base/fontSettings.scss";
 
 //*************************** Features ********************************
-@import "./features/snap-scroll.scss";
 @import "./features/preloader.scss";
 
 //*************************** Pages ********************************

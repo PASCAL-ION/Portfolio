@@ -9,8 +9,8 @@
     display: grid;
     grid-template-rows: repeat(10, auto);
     grid-template-columns: 1fr 1fr;
-    background: #111111d7;
     overflow: hidden;
+    padding-top: 50px;
 
     @include respond(desktop){
         grid-template-columns: .6fr 1fr;
@@ -20,15 +20,12 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        border: 2px solid $blue;
+        border: 2px solid $subtle-border-and-separator-6;
         height: 80%;
         width: 100%;
         grid-area:  1 / 1 / 4 / 3;
     }
     
-    &__h1{
-        color: white;
-    }
 
     &__contact-form{
         position: relative;
@@ -59,10 +56,11 @@
         #submitFormButton{
             position: absolute;
             bottom: 2%;
+            border-radius: 10px;
             margin: 0 auto;
-            background-color: transparent;
+            color: $height-contrast-text;
+            background-color: $ui-element-bg-3;
             border: 2px solid rgba(255, 255, 255, 0.389);
-            color: white;
             padding: 10px 20px;
             text-align: center;
             text-decoration: none;
@@ -78,9 +76,7 @@
             
         }
         #submitFormButton:hover {
-            background: linear-gradient(90deg,$darkestBlue, $blue);
-            color: white;
-            border-color: white;
+            background: $ui-hovered-bg-4;
         }
 
         @include respond(desktop){
@@ -156,8 +152,6 @@
             align-items: center;
             justify-content: center;
             background: none;
-
-            
         }
     }
     &__contactInformationsButton{
@@ -195,7 +189,6 @@
         margin-top: 20px;
         
         @include respond(desktop){
-            color: white;
             margin-top: 0;
         }
     }

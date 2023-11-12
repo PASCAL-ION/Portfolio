@@ -75,14 +75,18 @@ getData()
         </ul>
         <ul class="workContainer__card__projectLinksContainer">
           <li class="workContainer__card__link"> <a href="${project.githubLink}" target="_blank"><i class="fa-brands fa-github"></i></a></li>
-          ${project.websiteLink !== "" ?
-            `<li class="workContainer__card__link"> <a href="${project.websiteLink}" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a></li>`
-            :
-            ""
-          }
         </ul>
     </div>` 
   })
+
+    // Link to live demo, to do :
+  // <ul class="workContainer__card__projectLinksContainer">
+  //   ${project.websiteLink !== "" ?
+  //     `<li class="workContainer__card__link"> <a href="${project.websiteLink}" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a></li>`
+  //     :
+  //     ""
+  //   }
+  // </ul>
   
 }
 ).catch(err => console.log(err))

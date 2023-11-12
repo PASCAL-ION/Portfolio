@@ -25,7 +25,7 @@
 
         @include respond(desktop){
             height: 45px;
-            background: linear-gradient(90deg,rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.66) 50%, rgba(0, 0, 0, 0));
+            background: linear-gradient(90deg,rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.852) 50%, rgba(0, 0, 0, 0));
             margin-top: 0px;
             transform: translateX(0);
 
@@ -59,9 +59,10 @@
                     //center horizontally the after element 
                     display: flex;
                     justify-content: center;
+                    color: black;
 
                     @include respond(desktop){
-                        color: $lightestBlue;
+                        color: $low-contrast-text;
                     }
                     &::after{
                         content: "";
@@ -73,13 +74,14 @@
                         z-index: -1;
                         width: 115%;
                         height: 0;
-                        background: $lightestBlue;
-                        transition: height .5s;
+                        background: $ui-hovered-bg-4;
+                        transition: height .3s;
                     }
     
                     &:hover{
-                        color: $darkestBlue;
+                        color: $height-contrast-text;
                         &::after{
+                            border-radius: 10px;
                             height: 100%;
                         }
                     }

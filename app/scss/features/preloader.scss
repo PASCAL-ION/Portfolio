@@ -32,12 +32,12 @@
       animation: 1s spin linear infinite;
     }
     .loader::after {
-      color: $blue;
+      color: $ui-element-bg-3;
       transform: rotateY(70deg);
       animation-delay: .4s;
     }
     .loader::before {
-      color: $lightestBlue;
+      color: $height-contrast-text;
     }
 
   @keyframes rotate {

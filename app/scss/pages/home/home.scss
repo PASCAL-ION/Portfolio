@@ -53,11 +53,10 @@
         }
     }
     &__title{
-        color: white;
         font-weight: 700;
     }
     &__text{
-        color: white;
+        font-size: 1.2rem;
     }
 
     &__photoFrame{
@@ -69,7 +68,8 @@
         width: clamp(1600px, 40%, 2300px);
         z-index: -1;
         zoom: 20%;
-        border: 10px solid $blue;
+        border: 10px solid $ui-element-border-7;
+        border-radius: 100px;
 
         @include respond(desktop){
             top: 50%;
@@ -90,6 +90,7 @@
         z-index: -1;
         filter: brightness(.3) grayscale(1);
         transition: all .1s ease-in-out;
+        border-radius: 100px;
 
         &:hover{
             transform: rotateZ(0);

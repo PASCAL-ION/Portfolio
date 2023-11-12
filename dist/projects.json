@@ -30,9 +30,9 @@
         "title" : "Ecommerce JS",
         "image" : "../images/Kanap.webp",
         "alt" : "Image projet Kanap",
-        "text": "Dans le cadre du projet Kanap, j'ai développé la logique essentielle pour le bon fonctionnement du site, en utilisant la méthode fetch pour la gestion des données. J'ai créé une structure HTML dynamique basée sur les produits disponibles sur le backend. La gestion du panier, incluant l'ajout, la suppression et la modification des articles, a été assurée par un script dédié. J'ai utilisé le local storage pour garantir la disponibilité des données du panier entre les pages du site. De plus, des expressions régulières (regex) ont été mises en place pour assurer la sécurité des données dans les formulaires, renforçant ainsi la fiabilité du processus de commande et offrant une expérience utilisateur plus sûre et agréable.",
+        "text": "Dans le cadre du projet Kanap, j'ai mis en place la logique essentielle du site en utilisant fetch pour la gestion des données. La structure HTML dynamique repose sur les produits du backend, et la gestion du panier, y compris l'ajout, la suppression, et la modification des articles, est prise en charge par un script dédié. J'ai utilisé le local storage pour assurer la persistance des données du panier entre les pages du site.",
         "githubLink": "https://github.com/PASCAL-ION/Kanap",
         "websiteLink": "https://pascal-ion.github.io/Kanap/",
-        "techStack": ["test", "test", "test"]
+        "techStack": ["fetch", "Local Storage", "Regex"]
     }
 ]
