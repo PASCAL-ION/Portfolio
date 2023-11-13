@@ -137,7 +137,7 @@
         bottom: 0;
         left: 0;
         width: 100%;
-        background: rgb(203, 203, 203);
+        background: $ui-element-bg-3;
         transition: height .7s cubic-bezier(0.68,0,0.27,1.55);
         z-index: 999;
 
@@ -157,7 +157,7 @@
     &__contactInformationsButton{
         width: 80px;
         height: 40px;
-        background: white;
+        background: $solid-bg-9;
         position: absolute;
         top: -30px;
         left: 50%;
@@ -168,14 +168,19 @@
         border-radius: 5px;
 
         .rotate{
-            transform: rotate(0deg);
+            transform: rotate(180deg);
         }
 
-        img{
-            width: 70%;
+        .chevron{
+            width: 100%;
             margin-bottom: 7px;
-            transform: rotate(-180deg);
+            font-family: FontAwesome;
             transition: transform .7s cubic-bezier(0.68,0,0.27,1.55);
+
+            &::before{
+                color: $height-contrast-text;
+                font-size: 2rem;
+            }
         }
 
         @include respond(desktop){
@@ -183,7 +188,7 @@
         }
     }
 
-    &__contactInformationsH1{
+    &__contactInformationsH2{
         width: 100%;
         text-align: center;
         margin-top: 20px;

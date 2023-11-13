@@ -18,6 +18,8 @@ h2{
 a{
     font-family: 'Merriweather', serif;
     font-size: clamp(1rem, 16px + 4vw, 1.3rem);
+    color: $height-contrast-text;
+
 }
 p, span, li{
     font-family: 'Merriweather', serif;
