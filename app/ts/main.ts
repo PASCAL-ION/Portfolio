@@ -1,3 +1,4 @@
+
 const proectsContainer = document.querySelector(".workContainer__projectsContainer") as HTMLElement
 const menuButton = document.querySelector('.homeContainer__menuButton') as HTMLElement;
 const responsiveNav = document.querySelector(".homeContainer__responsiveNav") as HTMLElement;
@@ -58,7 +59,7 @@ getData()
   data.forEach((project) => {
     //create the dom elements
     proectsContainer.innerHTML += 
-    `<div class="workContainer__card">
+    `<div class="workContainer__card" data-aos="fade-up" data-aos-anchor-placement="top-center">
       <div class="workContainer__card__imageContainer">
         <img src="${project.image}" alt="${project.alt}" class="workContainer__card__imageContainer__image">
       </div>
