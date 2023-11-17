@@ -16,16 +16,16 @@ h2{
 
 }
 a{
-    font-family: 'Merriweather', serif;
+    font-family: 'Karla', sans-serif;
     font-size: clamp(1rem, 16px + 4vw, 1.3rem);
     color: $height-contrast-text;
 
 }
-p, span, li{
+p, span, li, strong{
     font-family: 'Merriweather', serif;
     font-size: clamp(1rem, 16px + 4vw, 1rem);
     color: $height-contrast-text;
 }
-*{
+* {
     letter-spacing: 1px;
 }
