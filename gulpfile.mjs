@@ -59,7 +59,7 @@ function reload() {
       baseDir: "./dist",
     }
   });
-  gulp.watch(['./app/**/*.scss', './app/**/*.ts', './dist/*.html']).on('change', browserSync.reload);
+  gulp.watch(['./app/**/*.scss', './app/**/*.ts', './*.html']).on('change', browserSync.reload);
 }
 
 export function watch() {
