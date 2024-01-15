@@ -1,140 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="./css/style.css">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/kursor/dist/kursor.css">
   <title>Pascal Ion Portfolio</title>
 </head>
+
 <body>
   <div class="loaderContainer">
-    <div class="loader"><!-- <img src="./images/preloader.gif" alt=""> --></div>
+    <div class="loader"></div>
   </div>
-  <!-- <img src="./images/bgPortfolio.webp" class="website-backgroundImage" alt="website-backgroundImage"> -->
-    
-      <section class="home-section " id="section1">
-        <div class="homeContainer">
-          <a href="#section1" id="myLogo"><img src="./images/myLogo.webp" alt="logo of website"></a>
-          <button class="homeContainer__menuButton menuClosed">
-            <span class="homeContainer__menuButton__line line1"></span>
-            <span class="homeContainer__menuButton__line line2"></span>
-            <span class="homeContainer__menuButton__line line3"></span>
-          </button>
-          
-          <nav class="homeContainer__responsiveNav">
-            <ul>
-              <li><a href="#section2">A propos</a></li>
-              <li><a href="#section3">Projets</a></li>
-              <li><a href="#section4">Contact</a></li>
-            </ul>
-          </nav>
-          <div class="homeContainer__presentationText">
-            <h1 class="homeContainer__title">Bonjour ! Moi c'est Ion. </h1>
-            <p class="homeContainer__text">Je suis developpeur web junior</p>
-          </div>
-         
-          <div class="homeContainer__photoFrame">
-            <div class="homeContainer__profilePhoto"></div>
-          </div>
+
+  <section class="home-section " id="section1">
+    <div class="homeContainer">
+      <a href="#section1" id="logo"><img src="./images/logo(1).png" alt="logo of website"></a>
+      <div class="homeContainer__language-selector">
+        <span class="en"><img src="./images/united-kingdom.png" alt=""></span>
+        <span class="fr"><img src="./images/france.png" alt=""></span>
+      </div>
+      <button class="homeContainer__menuButton menuClosed">
+        <span class="homeContainer__menuButton__line line1"></span>
+        <span class="homeContainer__menuButton__line line2"></span>
+        <span class="homeContainer__menuButton__line line3"></span>
+      </button>
+
+      <nav class="homeContainer__responsiveNav">
+        <ul>
+          <li><a href="#section2">A propos</a></li>
+          <li><a href="#section3">Projets</a></li>
+          <li><a href="#section4">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="homeContainer__presentationText">
+        <h1 class="homeContainer__title">Developpeur frontend junior</h1>
+        <div class="homeContainer__profilePhoto"></div>
+      </div>
+    </div>
+  </section>
+  <section class="about-section " id="section2">
+    <div class="aboutContainer">
+      <div class="aboutContainer__presentationTextContainer">
+        <p class="aboutContainer__presentationTextContainer__text" data-aos="fade-zoom-in"
+          data-aos-easing="ease-in-back" data-aos-delay="300" data-aos-offset="0">
+        </p>
+        </p>
+      </div>
+    </div>
+  </section>
+  <section class="work-section " id="section3">
+    <div class="workContainer">
+      <div class="workContainer__projectsContainer">
+        <!-- Dynamic content injected by ts -->
+      </div>
+    </div>
+  </section>
+  <section class="contact-section " id="section4">
+    <div class="contactContainer">
+      <form class="contactContainer__contact-form" action="https://formsubmit.co/ionpascal26@gmail.com" method="POST"
+        data-aos="zoom-out" data-aos-anchor-placement="top-center">
+        <h3>Contact</h3>
+        <div class="contactContainer__input-group">
+          <input type="text" id="name" name="name" placeholder=" " required autocomplete="on">
+          <label for="name" class="contactContainer__label contactContainer__fullNameLabel">Nom</label>
         </div>
-      </section>
-        <section class="about-section " id="section2">
-          <div class="aboutContainer">
-              <div class="aboutContainer__presentationTextContainer">
-                <h2 class="aboutContainer__presentationTextContainer__title"  
-                  data-aos="fade-zoom-in"
-                  data-aos-easing="ease-in-back"
-                  data-aos-delay="300"
-                  data-aos-offset="0">
-                  pourquoi ce portfolio
-                </h2>
-                <p class="aboutContainer__presentationTextContainer__text"  
-                  data-aos="fade-zoom-in"
-                  data-aos-easing="ease-in-back"
-                  data-aos-delay="300"
-                  data-aos-offset="0">
-                  J’ai débuté mon parcours dans le développement web en <strong>autodidacte</strong> , motivé par une expérience qui m'a fait découvrir et apprécier le monde du code. Puis, afin de me perfectionner et me professionnaliser, j'ai décidé de suivre une <strong>formation de développeur web chez OpenClassrooms</strong>. Cette formation, suivie pendant 9 mois, m’a entre autres, donné l'opportunité de plonger dans l'univers captivant de <strong>React</strong> . L'aisance et l'approche ludique de la construction de sites web avec cette bibliothèque m'ont immédiatement séduit. C'est ainsi que dans la volonté de perfectionner mes compétences, je recherche une entreprise pour poursuivre la formation <strong>Bachelor concepteur développeur d'application</strong>  proposée par <strong>ISCOD</strong> sur une durée de 12 mois avec un rythme de <strong>4 jours en entreprise et 1 jour en formation</strong> .
-                </p>
-              </div>
-              <div class="aboutContainer__skillsContainer">
-                <h2 class="aboutContainer__skillsContainer__title">mes competences</h2>
-                <ul class="aboutContainer__skillsList">
-                  <li class="aboutContainer__skill" data-skill="TypeScript" data-aos="zoom-in"><img src="./images/tsIcon.webp" alt="typescript icon"></li>
-                  <li class="aboutContainer__skill" data-skill="NodeJS" data-aos="zoom-in"><img src="./images/nodejsIcon.webp" alt="nodejs icon"></li>
-                  <li class="aboutContainer__skill" data-skill="ReactJS" data-aos="zoom-in"><img src="./images/reactIcon.webp" alt="reacjs icon"></li>
-                  <li class="aboutContainer__skill" data-skill="Optimisation SEO" data-aos="zoom-in"><img src="./images/seoIcon.webp" alt="seo icon"></li>
-                  <li class="aboutContainer__skill" data-skill="Scss" data-aos="zoom-in"><img src="./images/sassIcon.webp" alt="sass icon"></li>
-                  <li class="aboutContainer__skill" data-skill="Gulp" data-aos="zoom-in"><img src="./images/gulpIcon.webp" alt="gulp icon"></li>
-                  <li class="aboutContainer__skill" data-skill="API CRUD" data-aos="zoom-in"><img src="./images/apiIcon.webp" alt="API CRUD icon"></li>
-                  <li class="aboutContainer__skill" data-skill="MongoDb" data-aos="zoom-in"><img src="./images/mongodb.svg" alt="mongodb icon"></li>
-                </ul>
-              </div>
-              <div class="aboutContainer__learningContainer">
-                <h2 class="aboutContainer__learningContainer__title">Actuellement, je me forme sur</h2>
-                <ul class="aboutContainer__skillsList">
-                  <li class="aboutContainer__skill" data-skill="Aws" data-aos="zoom-in"><img src="./images/awsIcon.webp" alt="aws icon"></li>
-                  <li class="aboutContainer__skill" data-skill="Jest" data-aos="zoom-in"><img src="./images/jestIcon.svg" alt="jest icon"></li>
-                </ul>
-              </div>
-          </div>
-        </section>
-        <section class="work-section " id="section3">
-          <div class="workContainer">
-            <h1 class="workContainer__title">Projets OpenClassrooms</h1> <!-- only on desktop -->
-            <div class="workContainer__projectsContainer">
-              <!-- Dynamic content injected by ts -->
-            </div>
-          <ul class="workContainer__dots">
-          </ul>
+        <div class="contactContainer__input-group">
+          <input type="email" id="email" name="email" placeholder=" " required autocomplete="on">
+          <label for="email" class="contactContainer__label contactContainer__emailLabel">Email</label>
         </div>
-        </section>
-      <section class="contact-section " id="section4">
-        <div class="contactContainer">
-          <div class="contactContainer__h1Container">
-            <h1 class="contactContainer__h1">Contactez moi !</h1>
-          </div>
-          <form class="contactContainer__contact-form" action="https://formsubmit.co/ionpascal26@gmail.com" method="POST" data-aos="zoom-out" data-aos-anchor-placement="top-center">
-            <div class="contactContainer__input-group">
-              <input type="text" id="name" name="name" placeholder=" " required autocomplete="on">
-              <label for="name" class="contactContainer__label contactContainer__fullNameLabel">Nom complet</label>
-            </div>
-            <div class="contactContainer__input-group">
-              <input type="email" id="email" name="email" placeholder=" " required autocomplete="on">
-              <label for="email" class="contactContainer__label contactContainer__emailLabel">Email</label>
-            </div>
-            <div class="contactContainer__input-group">
-              <input type="text" id="subject" name="subject" placeholder=" " required>
-              <label for="subject" class="contactContainer__label contactContainer__subjectLabel">Sujet</label>
-            </div>
-            <div class="contactContainer__input-group">
-              <textarea name="message" id="message" cols="30" rows="10" placeholder=" " required></textarea>
-              <label for="message" class="contactContainer__label contactContainer__messageLabel">Message</label>
-            </div>
-            <button type="submit" id="submitFormButton">Envoyer</button>
-          </form>
-          <div class="contactContainer__contactInformations">
-            <button class="contactContainer__contactInformationsButton"><i class="fas fa-chevron-up chevron" style="color: #b6ecf7;"></i></button>
-            <h2 class="contactContainer__contactInformationsH2">Mes coordonnées</h2>
-            <ul class="contactContainer__informationsList">
-              <li class="contactContainer__informationsList__phoneNumber information">
-                <img src="./images/phoneIcon.webp" id="phoneIcon"></img>
-                <a href="tel:+33753873448">07 53 87 34 48</a>
-              </li><hr>
-              <li class="contactContainer__informationsList__email information">
-                <img src="./images/emailIcon.webp" id="emailIcon"></img>
-                <a href="mailto: ionpascal26@gmail.com">ionpascal26@gmail.com</a>
-              </li><hr>
-              <a href="https://www.linkedin.com/in/ion-pascal-909582221/" class="contactContainer__informationsList__linkedin information"><img src="./images/linkedinIcon.webp" alt=""></a><hr>
-              <a href="https://github.com/PASCAL-ION" class="contactContainer__informationsList__github information"><img src="./images/github-logo.webp" alt=""></a>
-            </ul>
-          </div>
+        <div class="contactContainer__input-group">
+          <input type="text" id="subject" name="subject" placeholder=" " required>
+          <label for="subject" class="contactContainer__label contactContainer__subjectLabel">Sujet</label>
         </div>
-      </section>
-    <script type="module" src="./script/script.js"></script>
-    <script>AOS.init();</script>
+        <div class="contactContainer__input-group">
+          <textarea name="message" id="message" cols="30" rows="10" placeholder=" " required></textarea>
+          <label for="message" class="contactContainer__label contactContainer__messageLabel">Message</label>
+        </div>
+        <button type="submit" id="submitFormButton">Envoyer</button>
+      </form>
+    </div>
+  </section>
+  <footer>
+    <div class="footer-container">
+      <div class="footer-informations">
+        <div class="footer-contact">
+          <img src="./images/logo(1).png" alt="Logo">
+          <span>07 53 87 34 48</span>
+          <span>ionpascal26@gmail.com</span>
+        </div>
+        <div class="footer-links">
+            <a href="https://github.com/PASCAL-ION" target="_blank"><i class="fa-brands fa-github"></i>Github</a>
+            <a href="www.linkedin.com/in/ionpascal" target="_blank"><i class="fa-brands fa-linkedin"></i>Linkedin</a>
+        </div>
+      </div>
+      <a id="arrow-top" href="#top">
+        <i class="fa-solid fa-circle-arrow-up"></i>
+      </a>
+    </div>
+  </footer>
+  <script type="module" src="./script/script.js"></script>
+  <script>AOS.init();</script>
+  <script src="https://unpkg.com/kursor"></script>
+  <script>
+    new kursor({
+      type: 1,
+      removeDefaultCursor: true,
+      color: '#00A2C7'
+    })
+  </script>
 </body>
+
 </html>

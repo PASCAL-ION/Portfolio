@@ -21,7 +21,7 @@ a{
     color: $height-contrast-text;
 
 }
-p, span, li, strong{
+p, span, li, strong, button{
     font-family: 'Merriweather', serif;
     font-size: clamp(1rem, 16px + 4vw, 1rem);
     color: $height-contrast-text;

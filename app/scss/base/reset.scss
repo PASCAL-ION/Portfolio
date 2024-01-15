@@ -1,3 +1,4 @@
+@import "../utilities/key-frames.scss";
 
 *, *::before, *::after {
     box-sizing: border-box;
@@ -19,7 +20,11 @@ body::-webkit-scrollbar {
     max-width: 2000px;
     margin: 0 auto;
     scrollbar-width: none;
-    background: #0B161A;
+    background: linear-gradient(-45deg, #000000, #012833, #000000, #08252d, #062129, #021a21);
+    background-size: 400% 400%;
+    animation: gradient 10s ease infinite;
+    // background: #0B161A;
+
   }
   //  
   input, button, textarea, select {

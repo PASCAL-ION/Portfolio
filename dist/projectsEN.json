@@ -1,0 +1,50 @@
+[
+    {
+        "title" : "SEO Optimisation",
+        "image" : "../images/LaPanthere.webp",
+        "alt" : "Image projet La Panthère",
+        "text": "In this SEO mission for the La Panthère website, I identified non-optimized sections, developed correction strategies after detailed analysis, made adjustments, and conducted thorough tests with Lighthouse. My work brought significant improvements, enhancing the user experience and the site's SEO.",
+        "githubLink": "https://github.com/PASCAL-ION/La-Panthere",
+        "websiteLink": "https://pascal-ion.github.io/La-Panthere/",
+        "techStack": ["Lighthouse", "SEO practices"]
+    },
+    {
+        "title" : "API Build",
+        "image" : "../images/Piquante.webp",
+        "alt" : "Image projet Piquante",
+        "text": "I created a secure API for a spicy sauce review site. The API's goal is to allow users to create an account on the site and add, modify, and delete their own sauces, as well as view and like/dislike sauces from other users.",
+        "githubLink": "https://github.com/PASCAL-ION/Piquante",
+        "websiteLink": "",
+        "techStack": ["Node.Js", "MongoDB", "Express", "OWASP"]
+    },
+    {
+        "title" : "ReactJs web Application",
+        "image" : "./images/Kasa.webp",
+        "alt" : "Image projet Kasa",
+        "text": "Implementation of a reactive web application using ReactJS, based on the design provided in a Figma mockup. State management with React ensures a smooth user experience. Responsive Design guarantees adaptability to all devices.",
+        "githubLink": "https://github.com/PASCAL-ION/Kasa",
+        "websiteLink": "https://pascal-ion.github.io/react-app-Kasa/",
+        "techStack": ["ReactRouter", "Styled Components", "Hooks"]
+    },
+    {
+        "title" : "E-commerce website",
+        "image" : "../images/Kanap.webp",
+        "alt" : "Image projet Kanap",
+        "text": "With the frontend and backend already built, I programmed the logic to dynamically display products from the backend. I created a script allowing users to manipulate items: add/remove products to the cart, choose quantity, and select the color of the product, etc.",
+        "githubLink": "https://github.com/PASCAL-ION/Kanap",
+        "websiteLink": "https://kanap-commerce-8449606f05f9.herokuapp.com",
+        "techStack": ["fetch", "Local Storage", "Regex"]
+    },
+    {
+        "about" : "I am Pascal Ion, a junior frontend developer. I am a passionate web development enthusiast who has carved his path in the digital world through self-learning and a web developer training program at OpenClassrooms. Guided by my curiosity and determination, I have acquired skills in programming languages such as HTML, SCSS, and TypeScript, with a focus on specializing in ReactJs. My goal? To collaborate with you in bringing your ideas to life with an engaging website. Each project is a new opportunity for me to learn, innovate, and refine my skills. Although my journey in the web development world is just beginning, I am determined to deliver quality solutions and grow as a professional.",
+        "homeTitle" : "Junior Frontend Developper",
+        "navLinks" : [
+            "About",
+            "Projects",
+            "Contact"
+        ],
+        "formNameInput" : "Name",
+        "formSubjectInput" : "Subject",
+        "submitFormButton" : "Send"
+    }
+]

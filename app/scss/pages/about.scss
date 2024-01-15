@@ -17,6 +17,7 @@
     flex-direction: column;
     align-items: center;
     gap: 80px;
+    background: $ui-element-bg-3;
 
     @include respond(desktop){
         justify-content: space-around;
@@ -34,8 +35,6 @@
         @include respond(desktop){
             width: 90%;
             margin-top: 0;
-            border-bottom: 1px solid rgba(202, 240, 248, 0.25);
-            border-top: 1px solid rgba(202, 240, 248, 0.25);
             gap: 50px;
             height: auto;
         }
@@ -79,7 +78,7 @@
         align-items: center;
         justify-content: center;
         flex-wrap: wrap;
-        gap: 20px 20px;
+        gap: 50px 20px;
         width: clamp(300px, 100%, 700px);
     }
 

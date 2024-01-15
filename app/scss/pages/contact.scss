@@ -4,58 +4,35 @@
 
 .contactContainer{
     position: relative;
+    display: flex;
+    align-items: center;
     width: 100%;
-    height: 100vh;
-    display: grid;
-    grid-template-rows: repeat(10, auto);
-    grid-template-columns: 1fr 1fr;
-    overflow: hidden;
-    padding-top: 50px;
+    padding: 200px 0 20px 0;
 
-    @include respond(desktop){
-        grid-template-columns: .6fr 1fr;
-    }
-
-    &__h1Container{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border: 2px solid $subtle-border-and-separator-6;
-        height: 80%;
-        width: 100%;
-        grid-area:  1 / 1 / 4 / 3;
-    }
-    
 
     &__contact-form{
         position: relative;
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: center;
-        width: calc(100% - 50px) !important;
+        width: clamp(370px, 100%, 400px);
         margin: 0 auto;
+        height: auto;
         margin-top: 30px;
-        height: 85%;
-        gap: 20px;
+        gap: 30px;
         box-shadow: 2px 2px 2px rgba(255, 255, 255, 0.508);
         border-top: .1px solid rgba(255, 255, 255, 0.238);
         border-left: .1px solid rgba(255, 255, 255, 0.238);
         border-radius: 10px;
-        background: #515a5e74;
-        grid-area: 3 / 1 / -1 / -1;
+        background: #011d29;
+        padding: 20px 40px;
 
-        @media screen and (min-height: 800px) {
-            gap: 40px;
-        }
-        @include respond(desktop){
-            width: 60%;
-            width: calc(100% - 100px) !important;
+        h3{
+            font-size: clamp(1.2rem, 3vw, 2.5rem);
+            color: $height-contrast-text;
         }
 
         #submitFormButton{
-            position: absolute;
-            bottom: 2%;
             border-radius: 10px;
             margin: 0 auto;
             color: $height-contrast-text;
@@ -65,10 +42,8 @@
             text-align: center;
             text-decoration: none;
             display: inline-block;
-            font-size: 16px;
-            margin: 4px 2px;
+            font-size: 1rem;
             transition: background-color 0.4s, color 0.4s, border-color 0.4s;
-            cursor: pointer;
 
             @media screen and (min-height: 800px) {
                 padding: 2% 5%;
@@ -78,18 +53,13 @@
         #submitFormButton:hover {
             background: $ui-hovered-bg-4;
         }
-
-        @include respond(desktop){
-            grid-column: 1;
-        }
     }
 
     &__input-group{
         position: relative;
         display: flex;
         justify-content: center;
-        width: 80%;
-
+        width: 100%;
         
         input, textarea{
             width: 100%;
@@ -100,6 +70,10 @@
 
         input{
             height: 40px;
+        }
+
+        textarea{
+            height: 150px;
         }
     }
 
@@ -114,7 +88,7 @@
     textarea:focus ~ label,
     textarea:not(:placeholder-shown) ~ label  {
         transform: translateY(-150px) translateX(-5px);
-        color: rgb(244, 244, 244);
+        color: rgb(231, 14, 14);
     }
 
     &__label{
@@ -124,133 +98,6 @@
         transform: translateY(-50%);
         color: gray;
         transition: transform .2s;
-    }
-
-
-    .open{
-        height: 400px;
-    }
-
-    &__contactInformations{
-        position: absolute;
-        height: 0px;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        background: $ui-element-bg-3;
-        transition: height .7s cubic-bezier(0.68,0,0.27,1.55);
-        z-index: 999;
-
-        @include respond(desktop){
-            position: static;
-            grid-area: 4 / 2 / 10 / 3;
-            height: 100%;
-            width: 80%;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            background: none;
-        }
-    }
-    &__contactInformationsButton{
-        width: 80px;
-        height: 40px;
-        background: $solid-bg-9;
-        position: absolute;
-        top: -30px;
-        left: 50%;
-        transform: translateX(-50%);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 5px;
-
-        .rotate{
-            transform: rotate(180deg);
-        }
-
-        .chevron{
-            width: 100%;
-            margin-bottom: 7px;
-            font-family: FontAwesome;
-            transition: transform .7s cubic-bezier(0.68,0,0.27,1.55);
-
-            &::before{
-                color: $height-contrast-text;
-                font-size: 2rem;
-            }
-        }
-
-        @include respond(desktop){
-            display: none;
-        }
-    }
-
-    &__contactInformationsH2{
-        width: 100%;
-        text-align: center;
-        margin-top: 20px;
-        
-        @include respond(desktop){
-            margin-top: 0;
-        }
-    }
-    &__informationsList{
-        width: 100%;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-        margin-top: 50px;
-
-        @include respond(desktop){
-            height: auto;
-            margin-top: 30px;
-        }
-
-        hr{
-            width: 90%;
-
-            @include respond(desktop){
-                border: 1px solid #ffffff3b;
-            }
-        }
-        &__linkedin{
-            img{
-                height: 100%;
-            }
-        }
-        &__github{
-            img{
-                height: 100%;
-                border-radius: 50%;
-                background: radial-gradient(#ffffff, #ffffff00 90%);
-            }
-        }
-    }
-    .information{
-        height: 40px;
-        display: flex;
-        align-items: center;
-
-        @include respond(desktop){
-            color: white;
-        }
-        img{
-            width: 25px;
-            height: 25px;
-            margin-right: 10px;
-        }
-        a{
-            font-size: clamp(1rem, 5vw, 1.1rem);
-
-            @include respond(desktop){
-                color: white;
-            }
-        }
     }
 }
 

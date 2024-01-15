@@ -1,0 +1,47 @@
+@import "../base/color";
+
+.footer-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: $ui-element-bg-3;
+  color: #fff;
+  padding: 20px;
+}
+
+.footer-informations {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  margin-right: 30px;
+  flex-wrap: wrap;
+
+  @media screen and (max-width: 580px) {
+    gap: 0;
+  }
+}
+.footer-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  img {
+    height: 35px;
+  }
+}
+
+.footer-links {
+  margin-left: 40px;
+  a {
+    margin-right: 20px;
+    i {
+      margin-right: 10px;
+    }
+  }
+}
+
+#arrow-top{
+    i{
+        font-size: 2.5rem;
+        color: $subtle-border-and-separator-6;
+    }
+}

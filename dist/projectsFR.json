@@ -1,0 +1,67 @@
+[
+
+    {
+        "title": "Optimisation SEO",
+        "image": "../images/LaPanthere.webp",
+        "alt": "Image projet La Panthère",
+        "text": "Dans cette mission SEO pour le site La Panthère, j'ai identifié les sections non optimisées, élaboré des stratégies de correction après une analyse détaillée, effectué des ajustements, et réalisé des tests approfondis avec Lighthouse. Mon travail a amené des améliorations significatives, renforçant l'expérience utilisateur et le référencement du site.",
+        "githubLink": "https://github.com/PASCAL-ION/La-Panthere",
+        "websiteLink": "https://pascal-ion.github.io/La-Panthere/",
+        "techStack": [
+            "Lighthouse",
+            "SEO practices"
+        ]
+    },
+    {
+        "title": "Constrction API",
+        "image": "../images/Piquante.webp",
+        "alt": "Image projet Piquante",
+        "text": "J'ai créé une API sécurisée pour un site de critiques de sauces piquantes. L'objectif de l'API : permettre aux utilisateurs de se créer un compte sur le site et pouvoir ajouter, de modifier et supprimer leur propres sauces ainsi que voir et liker/disliker les sauces des autres utilisateurs.",
+        "githubLink": "https://github.com/PASCAL-ION/Piquante",
+        "websiteLink": "",
+        "techStack": [
+            "Node.Js",
+            "MongoDB",
+            "Express",
+            "OWASP"
+        ]
+    },
+    {
+        "title": "Application ReactJs",
+        "image": "./images/Kasa.webp",
+        "alt": "Image projet Kasa",
+        "text": "Mise en place d'une application web réactive en utilisant ReactJS, en se basant sur la conception fournie dans une maquette Figma. La gestion d'état avec React assurent une expérience utilisateur fluide. Le Responsive Design garantit une adaptabilité à tous les dispositifs.",
+        "githubLink": "https://github.com/PASCAL-ION/Kasa",
+        "websiteLink": "https://pascal-ion.github.io/react-app-Kasa/",
+        "techStack": [
+            "ReactRouter",
+            "Styled Components",
+            "Hooks"
+        ]
+    },
+    {
+        "title": "Site E-commerce",
+        "image": "../images/Kanap.webp",
+        "alt": "Image projet Kanap",
+        "text": "Le frontend et le backend étant déjà construits, j'ai programmé la logique pour afficher dynamiquement les produits présents dans le backend. J'ai créé un script permettant à l'utilisateur de manipuler les articles : ajouter/supprimer des produits dans le panier, choisir la quantité ainsi que la couleur du produit, etc.",
+        "githubLink": "https://github.com/PASCAL-ION/Kanap",
+        "websiteLink": "https://kanap-commerce-8449606f05f9.herokuapp.com",
+        "techStack": [
+            "fetch",
+            "Local Storage",
+            "Regex"
+        ]
+    },
+    {
+        "about": "Je suis Pascal Ion, développeur frontend junior. Je suis un passionné de développement web qui a forgé son chemin dans le monde numérique à travers l'auto-apprentissage et une formation de développeur web chez <a href='https://openclassrooms.com/fr/paths/900-integrateur-web#projects'>OpenClassrooms</a>. Guidé par ma curiosité et ma détermination, j'ai acquis des compétences en langages de programmation tels que HTML, SCSS et TypeScript, et je tends à me spécialiser dans ReactJs. Mon objectif ? collaborer avec vous pour donner vie à vos idées avec un site web captivant. Chaque projet est une nouvelle opportunité pour moi d'apprendre, d'innover et de perfectionner mes compétences. Bien que mon chemin dans le monde du développement web ne soit qu'à ses débuts, je suis déterminé à fournir des solutions de qualité et à grandir en tant que professionnel.",
+        "homeTitle" : "Developpeur Frontend Junior",
+        "navLinks" : [
+            "A proppos",
+            "Projets",
+            "Contact"
+        ],
+        "formNameInput" : "Nom",
+        "formSubjectInput" : "Sujet",
+        "submitFormButton" : "Envoyer"
+    }
+]
