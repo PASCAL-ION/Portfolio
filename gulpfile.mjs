@@ -57,6 +57,7 @@ function reload() {
   browserSync.init({
     server: {
       baseDir: "./dist",
+      index: "index.html"
     }
   });
   gulp.watch(['./app/**/*.scss', './app/**/*.ts', './*.html']).on('change', browserSync.reload);
