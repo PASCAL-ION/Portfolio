@@ -8,9 +8,10 @@ const langEN = document.querySelector('.homeContainer__language-selector .en img
 const languageSelector = document.querySelector('.homeContainer__language-selector') as HTMLElement
 const aboutText = document.querySelector(".aboutContainer__presentationTextContainer__text") as HTMLElement
 const homeTitle = document.querySelector('.homeContainer__title') as HTMLElement
-const nameInput = document.querySelector(".contactContainer__fullNameLabel") as HTMLElement
-const subjectInput = document.querySelector(".contactContainer__subjectLabel") as HTMLElement
+const nameLabel = document.querySelector(".contactContainer__fullNameLabel") as HTMLElement
+const subjectLabel = document.querySelector(".contactContainer__subjectLabel") as HTMLElement
 const submitFormButton = document.querySelector('#submitFormButton') as HTMLElement
+
 
  
 /* -------------------------------NAV-------------------------------- */    
@@ -85,8 +86,8 @@ async function loadData(jsonPath) {
     let data = await response.json() as MyData[];
     aboutText.innerHTML = data[4].about
     homeTitle.innerHTML = data[4].homeTitle
-    nameInput.innerHTML = data[4].formNameInput
-    subjectInput.innerHTML = data[4].formSubjectInput
+    nameLabel.innerHTML = data[4].formNameInput
+    subjectLabel.innerHTML = data[4].formSubjectInput
     submitFormButton.innerHTML = data[4].submitFormButton
 
     data[4].navLinks.forEach((linkName, index) => {
@@ -121,7 +122,7 @@ async function loadData(jsonPath) {
             ${project.websiteLink !== "" ?
                 `<li class="workContainer__card__link"> <a href="${project.websiteLink}" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a></li>`
                 :
-                ""
+                "Website Live Soon..."
               }
           </ul>
       </div>` 

@@ -4,151 +4,152 @@
 @import "../../base/reset.scss";
 
 //classe pour gerer l'ouverture du menu sur mobile
-.open{
-    transform: translateX(0)!important;
+.open {
+  transform: translateX(0) !important;
 }
-.homeContainer{
+.homeContainer {
+  height: 100vh;
+  width: 100vw;
+
+  &__responsiveNav {
     height: 100vh;
-    width: 100vw;
+    width: 100%;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: $ui-element-bg-3;
+    transform: translateX(-100%);
+    transition: transform 0.4s cubic-bezier(0.47, 1.64, 0, 0.8);
+    z-index: 4;
 
-    &__responsiveNav{
-        height: 100vh;
+    @include respond(desktop) {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      transform: translateX(0);
+      height: 45px;
+      width: clamp(200px, 100vw, 500px);
+      background: $ui-element-bg-3;
+      padding: 5px 10px;
+      border-radius: 20px;
+    }
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+      height: 70%;
+
+      @include respond(desktop) {
+        flex-direction: row;
         width: 100%;
-        position: fixed;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: $ui-element-bg-3;
-        transform: translateX(-100%);
-        transition: transform .4s cubic-bezier(.47,1.64,0,.8);
-        z-index: 4;
+        gap: 40px;
+      }
 
-        @include respond(desktop){
-            position: fixed;
-            top: 10px;
-            right: 10px;
-            transform: translateX(0);
-            height: 45px;
-            width: clamp(200px, 100vw, 400px);
-        background: none;
-    }
-    
-        ul{
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: space-around;
-            height: 70%;
-    
-            @include respond(desktop){
-                flex-direction: row;
-                width: 100%;
-                gap: 40px;
-            }
-            
-            li{
-                a{
-                    position: relative;
-                    //center horizontally the after element 
-                    display: flex;
-                    justify-content: center;
-                    color: $height-contrast-text;
+      li {
+        a {
+          position: relative;
+          //center horizontally the after element
+          display: flex;
+          justify-content: center;
+          color: $height-contrast-text;
 
-                    @include respond(desktop){
-                        color: $low-contrast-text;
-                    font-size: 1.5rem;
-
-                    }
-                    &::after{
-                        content: "";
-                        display: block;
-                        position: absolute;
-                        border-radius: 1px;
-                        top: 50%;
-                        transform: translateY(-50%);
-                        z-index: -1;
-                        width: 115%;
-                        height: 0;
-                        background: $ui-hovered-bg-4;
-                        transition: height .3s;
-                    }
-    
-                    &:hover{
-                        color: $height-contrast-text;
-                        &::after{
-                            border-radius: 10px;
-                            height: 100%;
-                        }
-                    }
-                }
-            }
-        }
-    }
-    
-    //Button menu hamburger
-    
-    &__menuButton{
-        position: fixed;
-        right: 20px;
-        top: 20px;
-        width: 40px;
-        height: 30px;
-        z-index: 5;
-        background: transparent;
-
-        &__line{
+          @include respond(desktop) {
+            color: $low-contrast-text;
+            font-size: 1.5rem;
+          }
+          &::after {
+            content: "";
+            display: block;
             position: absolute;
-            left: 0;
-            height: 2px;
-            width: 100%;
-            background: rgb(255, 255, 255);
-            animation-duration: .3s;
-            animation-timing-function: ease;
-            animation-fill-mode: forwards;
-        }
-
-        .line1{
-            top: 0;
-        }
-        .line2{
+            border-radius: 1px;
             top: 50%;
-            left: 9px;
             transform: translateY(-50%);
-            width: 30px;
-        }
-        .line3{
-            bottom: 0;
-        }
+            z-index: -1;
+            width: 115%;
+            height: 0;
+            background: $ui-hovered-bg-4;
+            transition: height 0.3s;
+          }
 
-        &.menuOpen {
-            .line1 {
-              animation-name: line1Animation;
+          &:hover {
+            color: $height-contrast-text;
+            &::after {
+              border-radius: 10px;
+              height: 100%;
             }
-        
-            .line2 {
-                animation-name: line2Animation;
-            }
-        
-            .line3 {
-                animation-name: line3Animation;
-            }
+          }
         }
-
-        &.menuClosed {
-            .line1 {
-              animation-name: line1AnimationReverse;
-            }
-        
-            .line2 {
-                animation-name: line2AnimationReverse;
-            }
-        
-            .line3 {
-                animation-name: line3AnimationReverse;
-            }
-        }
-        @include respond(desktop){
-            display: none;
-        }
+      }
     }
+  }
+
+  //Button menu hamburger
+
+  &__menuButton {
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    width: 40px;
+    height: 30px;
+    z-index: 5;
+    background: transparent;
+
+    &__line {
+      position: absolute;
+      left: 0;
+      height: 2px;
+      width: 100%;
+      background: rgb(255, 255, 255);
+      animation-duration: 0.3s;
+      animation-timing-function: ease;
+      animation-fill-mode: forwards;
+    }
+
+    .line1 {
+      top: 0;
+    }
+    .line2 {
+      top: 50%;
+      left: 9px;
+      transform: translateY(-50%);
+      width: 30px;
+    }
+    .line3 {
+      bottom: 0;
+    }
+
+    &.menuOpen {
+      .line1 {
+        animation-name: line1Animation;
+      }
+
+      .line2 {
+        animation-name: line2Animation;
+      }
+
+      .line3 {
+        animation-name: line3Animation;
+      }
+    }
+
+    &.menuClosed {
+      .line1 {
+        animation-name: line1AnimationReverse;
+      }
+
+      .line2 {
+        animation-name: line2AnimationReverse;
+      }
+
+      .line3 {
+        animation-name: line3AnimationReverse;
+      }
+    }
+    @include respond(desktop) {
+      display: none;
+    }
+  }
 }

@@ -4,8 +4,8 @@
         "image" : "../images/LaPanthere.webp",
         "alt" : "Image projet La Panthère",
         "text": "In this SEO mission for the La Panthère website, I identified non-optimized sections, developed correction strategies after detailed analysis, made adjustments, and conducted thorough tests with Lighthouse. My work brought significant improvements, enhancing the user experience and the site's SEO.",
-        "githubLink": "https://github.com/PASCAL-ION/La-Panthere",
-        "websiteLink": "https://pascal-ion.github.io/La-Panthere/",
+        "githubLink": "https://github.com/PASCAL-ION/LaPanthere",
+        "websiteLink": "https://pascal-ion.github.io/LaPanthere/",
         "techStack": ["Lighthouse", "SEO practices"]
     },
     {
@@ -40,7 +40,7 @@
         "homeTitle" : "Junior Frontend Developper",
         "navLinks" : [
             "About",
-            "Projects",
+            "Work",
             "Contact"
         ],
         "formNameInput" : "Name",

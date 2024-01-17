@@ -2,46 +2,94 @@
 
 .footer-container {
   display: flex;
-  justify-content: space-around;
+  padding: 20px 30px;
+  justify-content: space-between;
   align-items: center;
-  background-color: $ui-element-bg-3;
-  color: #fff;
-  padding: 20px;
-}
 
-.footer-informations {
-  display: flex;
-  align-items: center;
-  gap: 50px;
-  margin-right: 30px;
-  flex-wrap: wrap;
-
-  @media screen and (max-width: 580px) {
-    gap: 0;
+  @media screen and (max-width: 700px) {
+    justify-content: space-around;
   }
-}
-.footer-contact {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  img {
-    height: 35px;
-  }
-}
 
-.footer-links {
-  margin-left: 40px;
-  a {
-    margin-right: 20px;
+  .logo_contact-social {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+
+    @media screen and (max-width: 700px) {
+      flex-direction: column;
+      align-items: start;
+    }
+
+    .logo {
+      @media screen and (max-width: 700px) {
+        margin-bottom: 30px;
+      }
+    }
+
+    .logo {
+      font-size: clamp(1.5rem, 5vw, 2rem);
+      transition: all 0.5s ease;
+      background-size: 0%;
+      color: white;
+
+      .p-letter-logo {
+        font-size: clamp(1.8rem, 5vw, 2rem);
+        background: #000;
+        padding: 5px 15px;
+        border-radius: 5px;
+      }
+    }
+
+    .contact-social {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 100%;
+      margin: 0 auto;
+      gap: 20px;
+
+      @media screen and (max-width: 700px) {
+        margin: 0;
+        gap: 5px;
+      }
+
+      .contact {
+        display: flex;
+        gap: 40px;
+
+        @media screen and (max-width: 700px) {
+          flex-direction: column;
+          gap: 5px;
+        }
+
+        i {
+          margin-right: 10px;
+        }
+      }
+      .social {
+        display: flex;
+        gap: 30px;
+
+        @media screen and (max-width: 700px) {
+          flex-direction: column;
+          align-items: start;
+          gap: 5px;
+          width: 100%;
+        }
+
+        i {
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+
+  #arrow-top {
     i {
-      margin-right: 10px;
+      font-size: 2.5rem;
+
+      color: white;
     }
   }
-}
-
-#arrow-top{
-    i{
-        font-size: 2.5rem;
-        color: $subtle-border-and-separator-6;
-    }
 }

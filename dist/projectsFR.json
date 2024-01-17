@@ -5,8 +5,8 @@
         "image": "../images/LaPanthere.webp",
         "alt": "Image projet La Panthère",
         "text": "Dans cette mission SEO pour le site La Panthère, j'ai identifié les sections non optimisées, élaboré des stratégies de correction après une analyse détaillée, effectué des ajustements, et réalisé des tests approfondis avec Lighthouse. Mon travail a amené des améliorations significatives, renforçant l'expérience utilisateur et le référencement du site.",
-        "githubLink": "https://github.com/PASCAL-ION/La-Panthere",
-        "websiteLink": "https://pascal-ion.github.io/La-Panthere/",
+        "githubLink": "https://github.com/PASCAL-ION/LaPanthere",
+        "websiteLink": "https://pascal-ion.github.io/LaPanthere/",
         "techStack": [
             "Lighthouse",
             "SEO practices"
@@ -31,7 +31,7 @@
         "image": "./images/Kasa.webp",
         "alt": "Image projet Kasa",
         "text": "Mise en place d'une application web réactive en utilisant ReactJS, en se basant sur la conception fournie dans une maquette Figma. La gestion d'état avec React assurent une expérience utilisateur fluide. Le Responsive Design garantit une adaptabilité à tous les dispositifs.",
-        "githubLink": "https://github.com/PASCAL-ION/Kasa",
+        "githubLink": "https://github.com/PASCAL-ION/react-app-Kasa/tree/master",
         "websiteLink": "https://pascal-ion.github.io/react-app-Kasa/",
         "techStack": [
             "ReactRouter",

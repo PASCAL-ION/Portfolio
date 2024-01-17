@@ -6,23 +6,23 @@
   z-index: 2;
   position: relative;
 
-  #logo {
+  .logo {
     position: fixed;
-    top: 20px;
+    top: 5px;
     left: 50%;
     transform: translateX(-50%);
     z-index: 999;
+    font-size: clamp(1.5rem, 5vw, 2rem );
+    transition: all .5s ease;
+    background-size: 0%;
+    color: white;
 
-    img {
-      height: 20px;
 
-      @media only screen and (min-width: 900px) {
-        height: 30px;
-      }
-    }
-
-    &:hover {
-      cursor: pointer;
+    .p-letter-logo{
+      font-size: clamp(1.8rem, 5vw, 2.5rem );
+      background: #000;
+      padding: 5px 15px;
+      border-radius: 5px;
     }
 
     @include respond(desktop) {
