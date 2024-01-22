@@ -7,13 +7,12 @@ const langFR = document.querySelector('.homeContainer__language-selector .fr img
 const langEN = document.querySelector('.homeContainer__language-selector .en img') as HTMLElement
 const languageSelector = document.querySelector('.homeContainer__language-selector') as HTMLElement
 const aboutText = document.querySelector(".aboutContainer__presentationTextContainer__text") as HTMLElement
-const homeTitle = document.querySelector('.homeContainer__title') as HTMLElement
+const homeTitle = document.querySelector('.homeContainer__title-and-socialLink__title') as HTMLElement
 const nameLabel = document.querySelector(".contactContainer__fullNameLabel") as HTMLElement
 const subjectLabel = document.querySelector(".contactContainer__subjectLabel") as HTMLElement
 const submitFormButton = document.querySelector('#submitFormButton') as HTMLElement
-
-
  
+
 /* -------------------------------NAV-------------------------------- */    
     responsiveNavLinks.forEach((link) => {
         link.addEventListener("click", closeNavOnLinkClick)
@@ -55,8 +54,8 @@ interface MyData {
   about: string;
   homeTitle: string;
   navLinks: string[];
-  formNameInput: string;
-  formSubjectInput: string;
+  nameLabel: string;
+  subjectLabel: string;
   submitFormButton: string;
 }
 let jsonPath = './projectsFR.json';
@@ -80,16 +79,17 @@ function switchLanguage() {
   loadData(jsonPath);
 }
 
+
 async function loadData(jsonPath) {
   try {
     let response = await fetch(jsonPath);
     let data = await response.json() as MyData[];
     aboutText.innerHTML = data[4].about
     homeTitle.innerHTML = data[4].homeTitle
-    nameLabel.innerHTML = data[4].formNameInput
-    subjectLabel.innerHTML = data[4].formSubjectInput
+    nameLabel.innerHTML = data[4].nameLabel
+    subjectLabel.innerHTML = data[4].subjectLabel
     submitFormButton.innerHTML = data[4].submitFormButton
-
+    
     data[4].navLinks.forEach((linkName, index) => {
     
       if (index < responsiveNavLinks.length) {
@@ -98,9 +98,11 @@ async function loadData(jsonPath) {
         link.innerHTML = linkName;
       }
     });
+
     projectsContainer.innerHTML = '';
 
     data.forEach((project) => {
+
       projectsContainer.innerHTML += 
       `<div class="workContainer__card" data-aos="fade-up" data-aos-anchor-placement="top-center">
         <div class="workContainer__card__imageContainer">
@@ -129,7 +131,7 @@ async function loadData(jsonPath) {
     });
 
   } catch (error) {
-    console.log(error);
+    console.log("error : " + error);
   }
 }
 

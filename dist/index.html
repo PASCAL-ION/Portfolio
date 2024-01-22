@@ -8,10 +8,15 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
     integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">
+  
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
   <link rel="stylesheet" href="./css/style.css">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -26,10 +31,10 @@
 
   <section class="home-section " id="section1">
     <div class="homeContainer">
-      <a href="#section1" class="logo"><span class="p-letter-logo">P</span>ascal Ion</a>
+      <a href="#section1" class="logo"><img src="./images/logo.webp" alt=""></a>
       <div class="homeContainer__language-selector">
-        <span class="en"><img src="./images/united-kingdom.png" alt=""></span>
-        <span class="fr"><img src="./images/france.png" alt=""></span>
+        <span class="en"><img src="./images/united-kingdom.webp" alt=""></span>
+        <span class="fr"><img src="./images/france.webp" alt=""></span>
       </div>
       <button class="homeContainer__menuButton menuClosed">
         <span class="homeContainer__menuButton__line line1"></span>
@@ -45,7 +50,13 @@
         </ul>
       </nav>
       <div class="homeContainer__presentationText">
-        <h1 class="homeContainer__title">Developpeur frontend junior</h1>
+        <div class="homeContainer__title-and-socialLink">
+          <h1 class="homeContainer__title-and-socialLink__title">Developpeur frontend junior</h1>
+          <ul class="homeContainer__title-and-socialLink__socialLink">
+            <li><i class="fa-brands fa-github"></i><a href="https://github.com/PASCAL-ION" target="_blank">Github</a></li>
+            <li><i class="fa-brands fa-linkedin"></i><a href="https://www.linkedin.com/in/ionpascal/" target="_blank">Linkedin</a></li>
+          </ul>
+        </div>
         <div class="homeContainer__profilePhoto"></div>
       </div>
     </div>
@@ -96,7 +107,7 @@
     <div class="footer-container">
       <div class="logo_contact-social">
         <div class="logo">
-          <p><span class="p-letter-logo">P</span>ascal Ion</p>
+          <a href="#section1" class="logo"><img src="./images/logo.webp" alt=""></a>
         </div>
         <div class="contact-social">
           <div class="contact">
@@ -105,7 +116,7 @@
           </div>
           <div class="social">
             <a href="https://github.com/PASCAL-ION" target="_blank"><i class="fa-brands fa-github"></i>Github</a>
-            <a href="www.linkedin.com/in/ionpascal" target="_blank"><i class="fa-brands fa-linkedin"></i>Linkedin</a>
+            <a href="https://www.linkedin.com/in/ionpascal/" target="_blank"><i class="fa-brands fa-linkedin"></i>Linkedin</a>
           </div>
           
         </div>

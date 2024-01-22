@@ -56,12 +56,12 @@
         "about": "Je suis Pascal Ion, développeur frontend junior. Je suis un passionné de développement web qui a forgé son chemin dans le monde numérique à travers l'auto-apprentissage et une formation de développeur web chez <a href='https://openclassrooms.com/fr/paths/900-integrateur-web#projects'>OpenClassrooms</a>. Guidé par ma curiosité et ma détermination, j'ai acquis des compétences en langages de programmation tels que HTML, SCSS et TypeScript, et je tends à me spécialiser dans ReactJs. Mon objectif ? collaborer avec vous pour donner vie à vos idées avec un site web captivant. Chaque projet est une nouvelle opportunité pour moi d'apprendre, d'innover et de perfectionner mes compétences. Bien que mon chemin dans le monde du développement web ne soit qu'à ses débuts, je suis déterminé à fournir des solutions de qualité et à grandir en tant que professionnel.",
         "homeTitle" : "Developpeur Frontend Junior",
         "navLinks" : [
-            "A proppos",
+            "À propos",
             "Projets",
             "Contact"
         ],
-        "formNameInput" : "Nom",
-        "formSubjectInput" : "Sujet",
+        "nameLabel" : "Nom",
+        "subjectLabel" : "Sujet",
         "submitFormButton" : "Envoyer"
     }
 ]

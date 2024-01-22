@@ -19,30 +19,23 @@
 @keyframes photoBlobEffect {
 
     0%{
-        border-top-right-radius: 70%;
+        border-top-right-radius: 180px;
+
     }
     25%{
-        border-bottom-right-radius: 70%;
+        border-bottom-right-radius: 180px;
+
     }
     50%{
-        border-bottom-left-radius: 70%;
+
+        border-bottom-left-radius: 180px;
     }
     100%{
-        border-top-left-radius: 70%;
-    }
-}
+        border-top-left-radius: 180px;
 
-//slide up/down the contact info on mobile
-// @keyframes slideUp {
-//     to{
-//         height: 400px;
-//     }
-// }
-// @keyframes slideDown {
-//     to{
-//         bottom: -400px;
-//     }
-// }
+    }
+
+}
 
 //menu hamurgers animation
 @keyframes line1Animation {
@@ -60,7 +53,6 @@
     100%{
         top: 50%;
         transform: rotate(45deg);
-        background: #000;
     }
 }
 @keyframes line2Animation {
@@ -83,7 +75,6 @@
     100%{
         bottom: 50%;
         transform: rotate(135deg);
-        background: #000;
     }
 }
 
@@ -102,7 +93,6 @@
     }
     100%{
         top: 0;
-        background: white;
     }
 }
 @keyframes line2AnimationReverse {
@@ -128,31 +118,5 @@
     }
     100%{
         bottom: 0;
-        background: white;
     }
 }
-
-// @keyframes openCardByAnimating{
-//     to{
-//         width: 80vw;
-//         height: 80vh;
-//     }
-// }
-
-// @keyframes dotFill {
-//     to{
-//         width: 100px;
-//     }
-// }
-
-// @keyframes gradient {
-//     0% {
-//         background-position: 0% 50%;
-//     }
-//     50% {
-//         background-position: 100% 50%;
-//     }
-//     100% {
-//         background-position: 0% 50%;
-//     }
-// }

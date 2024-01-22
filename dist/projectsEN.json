@@ -43,8 +43,8 @@
             "Work",
             "Contact"
         ],
-        "formNameInput" : "Name",
-        "formSubjectInput" : "Subject",
+        "nameLabel" : "Name",
+        "subjectLabel" : "Subject",
         "submitFormButton" : "Send"
     }
 ]
